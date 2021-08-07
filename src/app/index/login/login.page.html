@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-grid class="ci-center">
+        <img src="assets/icon/icon-login.svg" alt="">
+    </ion-grid>
+</ion-header>
+<ion-content>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12" class="ci-h-2">
+                Đăng nhập
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col size="12">
+                <form action="">
+                    <div class="form-group">
+                        <label for="" class="ci-gey-3 ">Email </label>
+                        <input type="text" class="form-group-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="ci-gey-3">Mật khẩu</label>
+                        <input type="text" class="form-group-input">
+                    </div>
+                    <div class="form-tool">
+                        <div class="ci-t-3 ci-center-item check-box">
+                            <input type="checkbox" id="save" name="save" value="Bike">
+                            <label for="save"> Lưu mật khẩu </label>
+                        </div>
+                        <div class="ci-t-3">
+                            Quên mật khẩu?
+                        </div>
+                    </div>
+                    <button class="btn-primary-16">
+                        Đăng nhập
+                    </button>
+                </form>
+            </ion-col>
+
+            <ion-col size="12" class="ion-text-center">
+                <span class="ci-gey-4">Bạn chưa có tài khoản? </span> <span class="ci-h-5" (click)="onRegister()"> Đăng ký</span>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+
+</ion-content>
