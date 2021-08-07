@@ -21,7 +21,11 @@
                     </div>
                     <div class="form-group">
                         <label for="" class="ci-gey-3">Mật khẩu</label>
-                        <input type="text" class="form-group-input">
+                        <input [type]="showPass ? 'password':'text'" class="form-group-input">
+                        <div class="toggle-btn" (click)="btnTogglePassword()">
+                            <img *ngIf="showPass" src="assets/icon/icon-eye.svg" alt="">
+                            <img *ngIf="!showPass" src="assets/icon/icon-show-eye.svg" alt="">
+                        </div>
                     </div>
                     <div class="form-tool">
                         <div class="ci-t-3 ci-center-item check-box">

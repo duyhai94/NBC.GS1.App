@@ -9,6 +9,7 @@ ion-grid {
 .form-group {
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 100%;
     label {
         padding-bottom: 0.25em;
@@ -22,6 +23,11 @@ ion-grid {
         height: 3em;
         border: none;
         padding: 0em 1em 0em 1em;
+    }
+    .toggle-btn {
+        position: absolute;
+        right: 1em;
+        bottom: 1.5em;
     }
 }
 

@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  showPass = false;
   formLogin = new FormGroup({
     Email: new FormControl(""),
     Password: new FormControl(""),
@@ -23,6 +24,9 @@ export class LoginPage implements OnInit {
 
   onRegister(){
     this.router.navigateByUrl('index/register');
+  }
+  btnTogglePassword(){
+    this.showPass = !this.showPass;
   }
 
 }
