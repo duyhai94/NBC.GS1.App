@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
   showPass = false;
+  showDelete = false;
   formLogin = new FormGroup({
     Email: new FormControl(""),
     Password: new FormControl(""),
@@ -28,5 +29,21 @@ export class LoginPage implements OnInit {
   btnTogglePassword(){
     this.showPass = !this.showPass;
   }
+  btnLogin() {
+    this.router.navigateByUrl('main')
+  }
+  onDelete(){
+      this.formLogin.get('Email').reset();
+      this.showDelete = false;
+  }
+  onKeyup(){
+    const _e = this.formLogin.get('Email').value;
+    if(_e.trim().length > 0){
+      this.showDelete = true;
+    } else{
+      this.showDelete = false;
 
+    }
+
+  }
 }

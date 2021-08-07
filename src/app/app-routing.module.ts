@@ -12,6 +12,10 @@ const routes: Routes = [
     redirectTo:'index',
     pathMatch: 'full'
 
+  },
+  {
+    path: 'main',
+    loadChildren: () => import('./main/main.module').then( m => m.MainPageModule)
   }
 
 ];

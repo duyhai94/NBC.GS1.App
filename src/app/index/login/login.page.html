@@ -14,14 +14,17 @@
 
         <ion-row>
             <ion-col size="12">
-                <form action="">
+                <form [formGroup]="formLogin" (ngSubmit)="btnLogin()">
                     <div class="form-group">
                         <label for="" class="ci-gey-3 ">Email </label>
-                        <input type="text" class="form-group-input">
+                        <input type="text" class="form-group-input" name="email" formControlName="Email" (keyup)="onKeyup()">
+                        <div class="toggle-btn" *ngIf="showDelete" (click)="onDelete()">
+                            <img src="assets/icon/icon-close.svg" alt="">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="" class="ci-gey-3">Mật khẩu</label>
-                        <input [type]="showPass ? 'password':'text'" class="form-group-input">
+                        <input [type]="showPass ? 'password':'text'" class="form-group-input" name="password" formControlName="Password">
                         <div class="toggle-btn" (click)="btnTogglePassword()">
                             <img *ngIf="showPass" src="assets/icon/icon-eye.svg" alt="">
                             <img *ngIf="!showPass" src="assets/icon/icon-show-eye.svg" alt="">
@@ -36,7 +39,7 @@
                             Quên mật khẩu?
                         </div>
                     </div>
-                    <button class="btn-primary-16">
+                    <button class="btn-primary-16" (click)="btnLogin()">
                         Đăng nhập
                     </button>
                 </form>
