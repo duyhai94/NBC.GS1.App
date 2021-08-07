@@ -1,0 +1,7 @@
+{
+  "name": "NBC.GS1.App",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
