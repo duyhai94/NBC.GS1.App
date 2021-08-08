@@ -21,11 +21,28 @@
     color: #272727;
 }
 
+.ci-h-3 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.25em;
+    line-height: 1.5em;
+    color: #272727;
+}
+
 .ci-h-5 {
     font-style: normal;
     font-weight: 600;
     font-size: 0.87;
     line-height: 1.3em;
+    color: #272727;
+}
+
+.ci-h-4 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1.25em;
+    text-align: center;
     color: #272727;
 }
 
@@ -52,4 +69,27 @@
     font-size: 0.81em;
     line-height: 1.3em;
     color: #000000;
+}
+
+.ci-t-normal {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.87em;
+    line-height: 1.5em;
+    color: #272727;
+}
+
+//modal
+
+/* DOES NOT WORK - not specific enough */
+
+.modal-wrapper {
+    background: #fff;
+}
+
+
+/* Works - pass "my-custom-class" in cssClass to increase specificity */
+
+.my-custom-class .modal-wrapper {
+    background: #fff;
 }

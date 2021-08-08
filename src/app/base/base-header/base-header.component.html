@@ -1,17 +1,22 @@
-<ion-grid>
-    <ion-row>
-        <ion-col size="2">
-            <ion-buttons slot="start">
-                <ion-back-button [defaultHref]="router" [icon]="buttonIcon">
-                </ion-back-button>
-            </ion-buttons>
-        </ion-col>
+<div class="header ">
 
-        <ion-col size="8">
+    <div class="header-item">
+        <ion-buttons>
+            <ion-back-button text="" class="ci-h-4" [defaultHref]=" router " [icon]="buttonIcon ">
+            </ion-back-button>
+        </ion-buttons>
+    </div>
+
+    <div class=" ci-h-4 ci-center">
+        <div class="ci-h-4">
             {{headerTitle}}
-        </ion-col>
 
-        <ion-col size="2"></ion-col>
+        </div>
 
-    </ion-row>
-</ion-grid>
+    </div>
+
+    <div class="header-item">
+    </div>
+
+
+</div>

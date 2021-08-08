@@ -26,8 +26,8 @@
                         <label for="" class="ci-gey-3">Mật khẩu</label>
                         <input [type]="showPass ? 'password':'text'" class="form-group-input" name="password" formControlName="Password">
                         <div class="toggle-btn" (click)="btnTogglePassword()">
-                            <img *ngIf="showPass" src="assets/icon/icon-eye.svg" alt="">
-                            <img *ngIf="!showPass" src="assets/icon/icon-show-eye.svg" alt="">
+                            <img *ngIf="!showPass" src="assets/icon/icon-eye.svg" alt="">
+                            <img *ngIf="showPass" src="assets/icon/icon-show-eye.svg" alt="">
                         </div>
                     </div>
                     <div class="form-tool">
@@ -35,7 +35,7 @@
                             <input type="checkbox" id="save" name="save" value="Bike">
                             <label for="save"> Lưu mật khẩu </label>
                         </div>
-                        <div class="ci-t-3">
+                        <div class="ci-t-3" (click)="onForgot()">
                             Quên mật khẩu?
                         </div>
                     </div>

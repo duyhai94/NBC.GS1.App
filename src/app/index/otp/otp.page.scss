@@ -1,0 +1,19 @@
+ion-grid {
+    padding: 6.25em 0.8em 0em 0.8em;
+}
+
+.otp {
+    display: flex;
+    justify-content: space-between;
+    ion-input {
+        display: inline-block;
+        width: 45px;
+        height: 60px;
+        margin: 10px;
+        border: 1px solid #272727;
+        border-radius: 0.5em;
+        --background: none;
+        --padding-start: 0.4em;
+        font-size: 2em;
+    }
+}

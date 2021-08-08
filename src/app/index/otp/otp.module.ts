@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { OtpPageRoutingModule } from './otp-routing.module';
 
 import { OtpPage } from './otp.page';
+import { BaseHeaderModule } from 'src/app/base/base-header/base-header.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    OtpPageRoutingModule
+    OtpPageRoutingModule,
+    BaseHeaderModule
   ],
   declarations: [OtpPage]
 })

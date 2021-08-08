@@ -1,9 +1,40 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>otp</ion-title>
-  </ion-toolbar>
+<ion-header no-border>
+    <app-base-header [router]="'index/register'" [headerTitle]="'Xác nhận OTP'"></app-base-header>
 </ion-header>
 
 <ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12" class="ci-center">
+                <img src="assets/icon/icon-otp.svg" alt="">
+            </ion-col>
+            <ion-col size="12" class="ci-t-normal ion-text-center">
+                Hệ thống đã gửi mã OTP về Số điện thoại của bạn. Vui lòng kiểm tra điện thoại và nhập mã OTP.
+            </ion-col>
+            <ion-col size="12" class="otp">
+                <ion-input #otp1 required maxLength="1" type="tel" (keyup)="otpController($event,otp2,'')">
+                </ion-input>
+                <ion-input #otp2 required maxLength="1" type="tel" (keyup)="otpController($event,otp3,otp1)">
+                </ion-input>
+                <ion-input #otp3 required maxLength="1" type="tel" (keyup)="otpController($event,otp4,otp2)">
+                </ion-input>
+                <ion-input #otp4 required maxLength="1" type="tel" (keyup)="otpController($event,otp5,otp3)">
+                </ion-input>
+                <ion-input #otp5 required maxLength="1" type="tel" (keyup)="otpController($event,otp6,otp4)">
+                </ion-input>
+                <ion-input #otp6 required maxLength="1" type="tel" (keyup)="otpController($event,'',otp5)">
+                </ion-input>
+            </ion-col>
+
+            <ion-col>
+                <button class="btn-primary-16" (click)="btnConfirm()">
+                Xác nhận
+            </button>
+            </ion-col>
+            <ion-col class="ci-h-5 ion-text-center" size="12" (click)="reSendOTP()">
+                Gửi lại mã
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
 </ion-content>

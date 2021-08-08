@@ -25,7 +25,7 @@ const routes: Routes = [
         loadChildren: () => import('./reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
       },
       {
-        path: 'otp',
+        path: 'otp/:id',
         loadChildren: () => import('./otp/otp.module').then( m => m.OtpPageModule)
       },
       {

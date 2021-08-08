@@ -1,9 +1,43 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
+    <app-base-header [router]="'index/login'" [headerTitle]="'Đăng ký'"></app-base-header>
 </ion-header>
 
 <ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12" class="ci-h-2">
+                Đăng ký
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="12">
+                <form [formGroup]="formRegister" (ngSubmit)="btnRegister()">
+                    <div class="form-group">
+                        <label for="" class="ci-gey-3 ">Số điện thoại</label>
+                        <input class="form-group-input" type="tel" formControlName="Phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="ci-gey-3 ">Mật khẩu</label>
+                        <input class="form-group-input" [type]="showPass1 ?  'password':'text' " formControlName="Password" name="password">
+                        <div class="toggle-btn" (click)="btnTogglePassword(1)">
+                            <img *ngIf="!showPass1" src="assets/icon/icon-eye.svg" alt="">
+                            <img *ngIf="showPass1" src="assets/icon/icon-show-eye.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="ci-gey-3 ">Xác nhận lại mật khẩu</label>
+                        <input class="form-group-input" [type]="showPass2 ?  'password':'text' " formControlName="Confirm" name="confirm">
+                        <div class="toggle-btn" (click)="btnTogglePassword(2)">
+                            <img *ngIf="!showPass2" src="assets/icon/icon-eye.svg" alt="">
+                            <img *ngIf="showPass2" src="assets/icon/icon-show-eye.svg" alt="">
+                        </div>
+                    </div>
+                    <button class="btn-primary-16" (click)="btnRegister()">
+                        Tiếp theo
+                    </button>
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
 </ion-content>
