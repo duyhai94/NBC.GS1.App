@@ -1,1 +1,27 @@
-<ion-router-outlet></ion-router-outlet>
+<ion-tabs>
+    <ion-tab-bar slot="bottom">
+
+        <ion-tab-button tab="home" class="item">
+            <img routerLink="/main/home" routerLinkActive="active" src="assets/icon/icon-home.svg" alt="">
+            <ion-label>Trang chủ</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="news" class="item">
+            <img routerLink="/main/news" routerLinkActive="active" src="assets/icon/icon-new.svg" alt="">
+            <ion-label>Tin tức</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button (click)="openRequestPage()">
+            <img src="assets/icon/icon-scan.svg" alt="">
+        </ion-tab-button>
+
+        <ion-tab-button tab="historys" class="item">
+            <img routerLink="/main/historys" routerLinkActive="active" src="assets/icon/icon-history.svg" alt="">
+            <ion-label>Lịch sử</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="contact" class="item">
+            <img routerLink="/main/contact" routerLinkActive="active" src="assets/icon/icon-contact.svg" alt="">
+            <ion-label>Liên hệ</ion-label>
+        </ion-tab-button>
+
+    </ion-tab-bar>
+</ion-tabs>

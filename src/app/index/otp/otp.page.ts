@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ModaSuccessComponent } from 'src/app/base/moda-success/moda-success.component';
 import { ModalService } from 'src/app/service/modal.service';
@@ -10,21 +10,37 @@ import { ModalService } from 'src/app/service/modal.service';
   styleUrls: ['./otp.page.scss'],
 })
 export class OtpPage implements OnInit {
-
+  checkRouter;
+  back;
+ 
   constructor(
     private activeRouter: ActivatedRoute,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    console.log(
-      this.activeRouter.snapshot.params
-    );
+   this.checkRouter = this.activeRouter.snapshot.params.id;
+   if(this.checkRouter == 1){
+     this.back ='index/register';
+   } else if( this.checkRouter == 2){
+    this.back ='index/forgot';
+
+   }
+    
     
   }
-  btnConfirm(){
-    
-      this.modaSuccess()
+  btnConfirm(){ 
+    console.log(this.checkRouter);
+    if(this.checkRouter == 1){
+      this.modaSuccess();
+    } else if (this.checkRouter == 2) {
+      this.router.navigateByUrl('index/reset-password');
+
+    }
+
+   
+  
   }
 
   async modaSuccess() {
@@ -33,7 +49,8 @@ export class OtpPage implements OnInit {
       cssClass: 'my-custom-class',
       componentProps: {
         img: 'assets/icon/icon-success.svg',
-        content: 'Đăng ký tài khoản thành công. </br>  Xin cảm ơn!',
+        content1: 'Đăng ký tài khoản thành công.',
+        content2: ' Xin cảm ơn!'
 
       }
     });

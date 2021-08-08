@@ -10,7 +10,9 @@ import { IonicModule, ModalController } from '@ionic/angular';
 })
 export class ModaSuccessComponent implements OnInit {
   @Input() img;
-  @Input() content;
+  @Input() content1;
+  @Input() content2;
+
   constructor(
     private router: Router,
     private modalController : ModalController
@@ -20,7 +22,7 @@ export class ModaSuccessComponent implements OnInit {
 
   onBack(){
     this.modalController.dismiss();
-    this.router.navigateByUrl('index/login')
+    this.router.navigateByUrl('index/login');
   }
 
 }

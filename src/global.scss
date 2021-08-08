@@ -32,9 +32,7 @@
 @import "theme/button.scss";
 @import "theme/global-class.scss";
 //remove border bottom in ion-header
-.bar-header {
-    border: 0px !important;
-    border-bottom-color: transparent !important;
+.header-md::after {
     background-image: none !important;
-    border-bottom: none !important;
+    content: "";
 }

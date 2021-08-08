@@ -1,0 +1,11 @@
+.active {
+    filter: invert(11%) sepia(73%) saturate(5274%) hue-rotate(208deg) brightness(46%) contrast(55%)
+}
+
+ion-tab-bar {
+    --border: none;
+    height: 5.5em;
+    .item {
+        margin-top: 1em;
+    }
+}
