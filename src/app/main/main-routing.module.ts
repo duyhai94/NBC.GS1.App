@@ -24,6 +24,7 @@ const routes: Routes = [
         path: 'contact',
         loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
       },
+    
       {
         path: '',
         redirectTo: 'home',
@@ -31,6 +32,15 @@ const routes: Routes = [
       }
     ]
   },
+  {
+    path: 'favourite',
+    loadChildren: () => import('./favourite/favourite.module').then( m => m.FavouritePageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+ 
 
 
 ];

@@ -1,0 +1,14 @@
+<div class="header">
+    <div class="header-logo ">
+        {{dataHeaderNav.logo.text}}
+        <img [src]="dataHeaderNav.logo.icon" alt="">
+    </div>
+    <div class="header-item">
+        <div *ngIf="dataHeaderNav.list.favourite == true" class="favourite" (click)="routerToFavourite()">
+            <img src="assets/icon/icon-favourite.svg" alt="">
+        </div>
+        <div *ngIf="dataHeaderNav.list.profile == true" class="profile" (click)="routerToProfile()">
+            <img src="assets/icon/de-avt.png" alt="">
+        </div>
+    </div>
+</div>

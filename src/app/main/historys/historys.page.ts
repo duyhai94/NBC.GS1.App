@@ -6,7 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./historys.page.scss'],
 })
 export class HistorysPage implements OnInit {
-
+  dataHeaderNav = {
+    logo : {
+      icon : null,
+      text : 'Liên hệ'
+    },
+    list: {
+      profile : true,
+      favourite : true
+    }
+  }
   constructor() { }
 
   ngOnInit() {

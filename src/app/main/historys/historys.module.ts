@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { HistorysPageRoutingModule } from './historys-routing.module';
 
 import { HistorysPage } from './historys.page';
+import { BaseHeaderNavModule } from 'src/app/base/base-header-nav/base-header-nav.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HistorysPageRoutingModule
+    HistorysPageRoutingModule,
+    BaseHeaderNavModule,
   ],
   declarations: [HistorysPage]
 })
