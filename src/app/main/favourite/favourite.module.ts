@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { FavouritePageRoutingModule } from './favourite-routing.module';
 
 import { FavouritePage } from './favourite.page';
+import { BaseHeaderModule } from 'src/app/base/base-header/base-header.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FavouritePageRoutingModule
+    FavouritePageRoutingModule,
+    BaseHeaderModule,
   ],
   declarations: [FavouritePage]
 })

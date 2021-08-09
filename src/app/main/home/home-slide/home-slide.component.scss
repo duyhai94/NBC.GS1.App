@@ -1,0 +1,31 @@
+.img-slide {
+    width: 100%;
+    height: 12.5em;
+    padding: 0em 1.125em;
+    img {
+        border-radius: 1em;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+::ng-deep {
+    .swiper-pagination-bullet {
+        --bullet-background: #ffffff !important;
+        opacity: 1;
+        border-radius: 50% !important;
+    }
+    .swiper-pagination-bullet-active {
+        --bullet-background-active: #ffffff !important;
+        width: 1.5em;
+        border-radius: 25% !important;
+    }
+    .swiper-pagination-fraction,
+    .swiper-pagination-custom,
+    .swiper-container-horizontal>.swiper-pagination-bullets {
+        left: 35%;
+        bottom: 0.25em;
+        width: 100%;
+    }
+}

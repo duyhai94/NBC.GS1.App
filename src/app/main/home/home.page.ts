@@ -16,6 +16,41 @@ export class HomePage implements OnInit {
       favourite : false
     }
   }
+  datatitle = {
+    dataTitleProduct : {
+      left: {
+        show : true,
+        icon : 'assets/icon/icon-outstanding.svg',
+        text : 'Sản phẩm nổi bật'
+      },
+      right: {
+        show : false,
+      }
+    },
+    dataTitleEnterprise : {
+      left: {
+        show : true,
+        icon : 'assets/icon/icon-trademark.svg',
+        text : 'Doanh nghiệp nổi bật'
+      },
+      right: {
+        show : false,
+      }
+    },
+    dataTitleNews : {
+      left: {
+        show : true,
+        icon : 'assets/icon/icon-new.svg',
+        text : 'Tin tức'
+      },
+      right: {
+        show : true,
+        icon: 'assets/icon/icon-next.svg',
+        link: '/main/news'
+      }
+    }
+  }
+  
   constructor() { }
 
   ngOnInit() {
