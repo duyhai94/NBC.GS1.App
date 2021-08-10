@@ -1,0 +1,40 @@
+<ion-slides [options]="slideOpts">
+    <ion-slide *ngFor="let i of data">
+        <div class="item">
+            <img [src]="i.img " alt=" ">
+            <div class="item-title">
+                <img [src]="i.iconGS" alt="">
+                <div>
+                    {{i.title | slice:0:14}}
+                </div>
+                <span *ngIf="i.title.length > 20">...</span>
+            </div>
+            <div class="item-date">
+                <img [src]="i.iconCheck" alt="">
+                <div>
+                    {{i.date}}
+                </div>
+            </div>
+        </div>
+    </ion-slide>
+</ion-slides>
+<ion-slides [options]="slideOpts">
+    <ion-slide *ngFor="let i of data">
+        <div class="item">
+            <img [src]="i.img " alt=" ">
+            <div class="item-title">
+                <img [src]="i.iconGS" alt="">
+                <div>
+                    {{i.title | slice:0:14}}
+                </div>
+                <span *ngIf="i.title.length > 20">...</span>
+            </div>
+            <div class="item-date">
+                <img [src]="i.iconCheck" alt="">
+                <div>
+                    {{i.date}}
+                </div>
+            </div>
+        </div>
+    </ion-slide>
+</ion-slides>

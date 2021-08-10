@@ -1,0 +1,44 @@
+.item {
+    margin: 0.5em;
+    width: 100%;
+    img {
+        width: 100%;
+        height: 6.25em;
+        object-fit: cover;
+        border-radius: 1em;
+    }
+    .item-title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        color: #272727;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        img {
+            width: 1em;
+            height: 1em;
+            margin-right: 0.5em;
+        }
+    }
+    .item-date {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: #8D8D8D;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        img {
+            width: 1em;
+            height: 1em;
+            margin-right: 0.7em;
+        }
+    }
+}
+
+ion-slide {
+    width: auto;
+}
