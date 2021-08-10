@@ -4,16 +4,18 @@
 </ion-header>
 
 <ion-content>
+    <!-- slide banner -->
     <app-home-slide></app-home-slide>
-    <ion-grid>
-        <ion-row>
+    <!-- product -->
 
-        </ion-row>
-    </ion-grid>
-    <app-base-title [dataTitle]="datatitle.dataTitleProduct"></app-base-title>
+    <div class="e-title">
+        <app-base-title [dataTitle]="datatitle.dataTitleProduct"></app-base-title>
+    </div>
 
-
-    <app-base-title [dataTitle]="datatitle.dataTitleEnterprise"></app-base-title>
+    <!-- enterprise -->
+    <div class="e-title">
+        <app-base-title [dataTitle]="datatitle.dataTitleEnterprise"></app-base-title>
+    </div>
     <ion-grid>
         <ion-row>
             <ion-col class="enterpris">
@@ -33,14 +35,10 @@
             </ion-col>
         </ion-row>
     </ion-grid>
+    <!-- news -->
+    <div class="e-title">
+        <app-base-title [dataTitle]="datatitle.dataTitleNews"></app-base-title>
+    </div>
+    <app-home-slide-news></app-home-slide-news>
 
-    <app-base-title [dataTitle]="datatitle.dataTitleNews"></app-base-title>
-    <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
-        <ion-slide *ngFor="let i of [1,2,3,4]">
-            <ion-col>
-                <img src="../../../assets/img/p1.png" alt="">
-                <!-- <img style="pointer-events:none;border-radius: 16px; " [src]="i.srcImageMobile "> -->
-            </ion-col>
-        </ion-slide>
-    </ion-slides>
 </ion-content>

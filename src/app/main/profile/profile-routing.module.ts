@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: ProfilePage
+  },
+  {
+    path: 'profile-detail',
+    loadChildren: () => import('./profile-detail/profile-detail.module').then( m => m.ProfileDetailPageModule)
+  },
+  {
+    path: 'profile-change',
+    loadChildren: () => import('./profile-change/profile-change.module').then( m => m.ProfileChangePageModule)
   }
 ];
 

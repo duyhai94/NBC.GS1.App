@@ -22,7 +22,7 @@ export class ProfilePage implements OnInit {
       right: {
         show : true,
         icon: 'assets/icon/icon-arrow.svg',
-        link: '/main/profile-detail'
+        link: '/main/profile/profile-detail'
       }
     },
     changePass : {
@@ -34,7 +34,7 @@ export class ProfilePage implements OnInit {
       right: {
         show : true,
         icon: 'assets/icon/icon-arrow.svg',
-        link: '/main/profile-change'
+        link: '/main/profile/profile-change'
       }
     },
     logout : {

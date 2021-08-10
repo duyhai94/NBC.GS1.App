@@ -1,15 +1,16 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
-import { HomePageRoutingModule } from './home-routing.module';
-
-import { HomePage } from './home.page';
 import { BaseHeaderNavModule } from 'src/app/base/base-header-nav/base-header-nav.component';
-import { HomeSlideComponent } from './home-slide/home-slide.component';
 import { BaseTitleModule } from 'src/app/base/base-title/base-title.component';
+import { HomePageRoutingModule } from './home-routing.module';
+import { HomeSlideNewsComponent } from './home-slide-news/home-slide-news.component';
+import { HomeSlideComponent } from './home-slide/home-slide.component';
+import { HomePage } from './home.page';
+
+
+
 
 @NgModule({
   imports: [
@@ -20,6 +21,6 @@ import { BaseTitleModule } from 'src/app/base/base-title/base-title.component';
     BaseHeaderNavModule,
     BaseTitleModule,
   ],
-  declarations: [HomePage, HomeSlideComponent]
+  declarations: [HomePage,HomeSlideNewsComponent,HomeSlideComponent ]
 })
 export class HomePageModule {}
