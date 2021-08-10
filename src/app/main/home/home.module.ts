@@ -5,7 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { BaseHeaderNavModule } from 'src/app/base/base-header-nav/base-header-nav.component';
 import { BaseTitleModule } from 'src/app/base/base-title/base-title.component';
 import { HomePageRoutingModule } from './home-routing.module';
-import { HomeSlideNewsComponent } from './home-slide-news/home-slide-news.component';
+import { HomeSlideNewsModule } from './home-slide-news/home-slide-news.component';
 import { HomeSlideProductComponent } from './home-slide-product/home-slide-product.component';
 import { HomeSlideComponent } from './home-slide/home-slide.component';
 import { HomePage } from './home.page';
@@ -21,7 +21,9 @@ import { HomePage } from './home.page';
     HomePageRoutingModule,
     BaseHeaderNavModule,
     BaseTitleModule,
+    HomeSlideNewsModule,
+
   ],
-  declarations: [HomePage,HomeSlideNewsComponent,HomeSlideComponent,HomeSlideProductComponent, ]
+  declarations: [HomePage,HomeSlideComponent,HomeSlideProductComponent, ]
 })
 export class HomePageModule {}

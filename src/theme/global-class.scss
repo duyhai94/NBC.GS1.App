@@ -84,6 +84,14 @@
     color: #272727;
 }
 
+.ci-t-primary {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #002C6C;
+}
+
 //modal
 
 /* DOES NOT WORK - not specific enough */
@@ -97,4 +105,9 @@
 
 .my-custom-class .modal-wrapper {
     background: #fff;
+}
+
+//base title
+.e-title {
+    padding: 1em;
 }

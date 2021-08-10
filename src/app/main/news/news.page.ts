@@ -16,9 +16,56 @@ export class NewsPage implements OnInit {
       favourite : false
     }
   }
+  dataCard = [
+    {
+      id: 1,
+      title: ' Hà Nội: Sẽ bắt buộc truy xuất nguồn gốc nông sản',
+      header: '  Thị trường - Tiêu dùng',
+      date: ' 24/02/2020',
+      img: 'assets/img/s4.png',
+      content: 'Sau hơn 3 năm triển khai, Hà Nội đã hoàn thiện thủ tục quản lý và'
+    },
+    {
+      id: 2,
+      title: ' Hà Nội: Sẽ bắt buộc truy xuất nguồn gốc nông sản',
+      header: '  Thị trường - Tiêu dùng',
+      date: ' 24/02/2020',
+      img: 'assets/img/s4.png',
+      content: 'Sau hơn 3 năm triển khai, Hà Nội đã hoàn thiện thủ tục quản lý và'
+    },  
+    {
+      id: 3,
+      title: ' Hà Nội: Sẽ bắt buộc truy xuất nguồn gốc nông sản',
+      header: '  Thị trường - Tiêu dùng',
+      date: ' 24/02/2020',
+      img: 'assets/img/s4.png',
+      content: 'Sau hơn 3 năm triển khai, Hà Nội đã hoàn thiện thủ tục quản lý và'
+    },  
+    {
+      id: 4,
+      title: ' Hà Nội: Sẽ bắt buộc truy xuất nguồn gốc nông sản',
+      header: '  Thị trường - Tiêu dùng',
+      date: ' 24/02/2020',
+      img: 'assets/img/s4.png',
+      content: 'Sau hơn 3 năm triển khai, Hà Nội đã hoàn thiện thủ tục quản lý và'
+    },  
+    {
+      id: 5,
+      title: ' Hà Nội: Sẽ bắt buộc truy xuất nguồn gốc nông sản',
+      header: '  Thị trường - Tiêu dùng',
+      date: ' 24/02/2020',
+      img: 'assets/img/s4.png',
+      content: 'Sau hơn 3 năm triển khai, Hà Nội đã hoàn thiện thủ tục quản lý và'
+    }
+  ]
+  segmentModel;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  segmentChanged(ev){
+    
   }
 
 }

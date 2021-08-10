@@ -1,8 +1,33 @@
 <ion-header>
     <app-base-header-nav [dataHeaderNav]="dataHeaderNav"></app-base-header-nav>
+    <div class="nav">
+        <ion-segment (ionChange)="segmentChanged($event)">
+            <ion-segment-button value="friends">
+                <ion-label>Friends</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="enemies">
+                <ion-label>Enemies</ion-label>
+            </ion-segment-button>
+
+            <ion-segment-button value="enemies">
+                <ion-label>Enemies</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+
+    </div>
 
 </ion-header>
-
 <ion-content>
+
+    <app-base-card [data]="dataCard"></app-base-card>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12" class="ion-text-center">
+                <button class="btn-light-14">
+                    Xem thêm
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
 </ion-content>

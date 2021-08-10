@@ -1,19 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, NgModule, OnInit } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-home-slide-news',
   templateUrl: './home-slide-news.component.html',
   styleUrls: ['./home-slide-news.component.scss'],
 })
-export class HomeSlideNewsComponent implements OnInit {
+export class HomeSlideNewsComponent {
   slideOpts = {
     initialSlide: 1,
     speed: 400,
     slidesPerView: 2.1,
   };
   constructor() { }
-
-  ngOnInit() {}
 
   data = [
     {
@@ -49,3 +49,9 @@ export class HomeSlideNewsComponent implements OnInit {
   ]
   
 }
+@NgModule({
+  declarations: [HomeSlideNewsComponent],
+  exports: [HomeSlideNewsComponent],
+  imports: [CommonModule,IonicModule]
+})
+export class  HomeSlideNewsModule{}

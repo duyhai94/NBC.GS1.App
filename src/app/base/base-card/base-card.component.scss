@@ -1,0 +1,39 @@
+.base-card {
+    background: #F7F7F7;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1.125em;
+    .header {
+        display: flex;
+        margin: 0.4em 0em;
+        .time {
+            padding-left: 2em;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                width: 0.5em;
+                height: 0.5em;
+                border-radius: 50%;
+                background-color: #8D8D8D;
+                top: 4px;
+                left: 10px;
+            }
+        }
+    }
+    .info {
+        width: 100%;
+        display: flex;
+        .item {
+            width: 50%;
+            height: 6.25em;
+            line-height: 2em;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 1em;
+            }
+        }
+    }
+}

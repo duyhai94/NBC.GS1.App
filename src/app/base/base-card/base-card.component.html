@@ -1,0 +1,26 @@
+<div class="base-card" *ngFor="let i of data" (click)="routerDetail(i.id)">
+    <div class="ci-h-5">
+        {{i.title}}
+    </div>
+    <div class="header">
+        <div class="ci-t-primary">
+            {{i.header}}
+        </div>
+        <div class="time ci-gey-3 ">
+            {{i.date}}
+        </div>
+    </div>
+    <div class="info ">
+        <div class="item">
+            <img [src]="i.img" alt="">
+
+        </div>
+        <div class="item ci-gey-3 ion-padding-start ion-padding-end">
+            <div>
+                {{i.content | slice: 0:65}}
+                <span *ngIf="i.content.length > 65">...</span>
+            </div>
+        </div>
+
+    </div>
+</div>

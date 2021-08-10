@@ -8,6 +8,7 @@ import { NewsPageRoutingModule } from './news-routing.module';
 
 import { NewsPage } from './news.page';
 import { BaseHeaderNavModule } from 'src/app/base/base-header-nav/base-header-nav.component';
+import { BaseCardModule } from 'src/app/base/base-card/base-card.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { BaseHeaderNavModule } from 'src/app/base/base-header-nav/base-header-na
     FormsModule,
     IonicModule,
     NewsPageRoutingModule,
-    BaseHeaderNavModule
+    BaseHeaderNavModule,
+    BaseCardModule,
   ],
   declarations: [NewsPage]
 })
