@@ -18,6 +18,7 @@ export class HomePage implements OnInit {
   }
   datatitle = {
     dataTitleProduct : {
+
       left: {
         show : true,
         icon : 'assets/icon/icon-outstanding.svg',
@@ -28,6 +29,7 @@ export class HomePage implements OnInit {
       }
     },
     dataTitleEnterprise : {
+
       left: {
         show : true,
         icon : 'assets/icon/icon-trademark.svg',

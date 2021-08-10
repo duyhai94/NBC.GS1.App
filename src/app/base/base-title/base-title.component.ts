@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, NgModule, OnInit } from '@angular/core';
+import { Component, Input, NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,13 +7,13 @@ import { Router } from '@angular/router';
   templateUrl: './base-title.component.html',
   styleUrls: ['./base-title.component.scss'],
 })
-export class BaseTitleComponent implements OnInit {
+export class BaseTitleComponent  {
   @Input() dataTitle;
   constructor(
     private router: Router
   ) { }
 
-  ngOnInit() {}
+
   routeTO(ev){
       this.router.navigateByUrl(ev);
   }

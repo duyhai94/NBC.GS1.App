@@ -1,17 +1,17 @@
 .base-title {
-    height: 3.625em;
+    // height: 3.625em;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0em 1.8em;
+    // padding: 0em 1.8em;
     .left {
         display: flex;
         align-items: center;
         img {
             width: 1.125em;
             height: 1.125em;
-            margin-right: 0.25em;
+            margin-right: 1em;
         }
     }
     .right {
@@ -19,8 +19,8 @@
         align-items: center;
         justify-content: flex-end;
         img {
-            width: 0.9em;
-            height: 0.875em;
+            // width: 0.9em;
+            // height: 0.875em;
         }
     }
 }
