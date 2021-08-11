@@ -19,8 +19,8 @@ export class ModalService{
       return modal;
     }
   
-    async closeModal(data?) {
-      await this.modalController.dismiss(data);
+    async closeModal() {
+      await this.modalController.dismiss();
     }
 
       

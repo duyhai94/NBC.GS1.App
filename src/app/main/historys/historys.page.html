@@ -38,7 +38,7 @@
                                     <img src="assets/icon/icon-forward-b.svg" alt="">
                                 </div>
                             </div>
-                            <div class="love " (click)="onLove(i.id)">
+                            <div class="love " (click)="openModalLove(i.id)">
                                 <img class="love-icon " src="assets/icon/icon-heart-active.svg " alt=" ">
                             </div>
                         </div>
@@ -48,7 +48,7 @@
 
 
             <ion-item-options side="end" mode="ios">
-                <ion-item-option (click)="onDelete(i.id)">
+                <ion-item-option (click)="openModalDelete(i.id)">
                     <img src="assets/icon/icon-delete.svg" alt="">
                 </ion-item-option>
             </ion-item-options>

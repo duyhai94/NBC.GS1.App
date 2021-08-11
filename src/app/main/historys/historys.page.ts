@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { BaseAlertComponent } from 'src/app/base/base-alert/base-alert.component';
+import { ModalService } from 'src/app/service/modal.service';
 
 @Component({
   selector: 'app-historys',
@@ -18,64 +20,45 @@ export class HistorysPage implements OnInit {
     }
   }
   constructor(
-    private alert: AlertController
+    private alert: AlertController,
+    private modalService: ModalService
   ) { }
 
   ngOnInit() {
   }
-  onDelete(id){
-    console.log(id);
-    this.alertDelete();
-    
-  }
-  onLove(id){
-    console.log(id);
-    this.alertRemoLove();
 
-  }
-  async alertDelete() {
-    const alert = await this.alert.create({
-      cssClass: 'alert-history',
-      header: 'Xóa sản phẩm khỏi lịch sử?',
-      message: 'Bạn chắc chắn muốn loại bỏ sản phẩm khỏi Lịch sử?',
-      buttons: [
-        {
-          text: 'Có',
-          cssClass: 'secondary',
-          handler: () => {
-          }
-        },
-        {
-          text: 'Không',
-          handler: (blah) => {
-          }
-        }
-      ]
-    });
 
-    await alert.present();
+  openModalLove(id){
+    this.modalService.presentModal({
+      component: BaseAlertComponent,
+      cssClass: 'modal-history',
+      mode: 'ios',
+      componentProps: {
+        'title': 'Xóa sản phẩm yêu thích?',
+        'content': 'Bạn chắc chắn muốn loại bỏ sản phẩm khỏi Lịch sử?',
+        'type': 1,
+        'id': id,
+      }
+    })
   }
-  async alertRemoLove() {
-    const alert = await this.alert.create({
-      cssClass: 'alert-history',
-      header: 'Xóa sản phẩm yêu thích?',
-      message: 'Bạn chắc chắn muốn loại bỏ sản phẩm khỏi Lịch sử?',
-      buttons: [
-        {
-          text: 'Có',
-          handler: () => {
-          }
-        },
-        {
-          text: 'Không',
-          handler: (blah) => {
-          }
-        }
-      ]
-    });
 
-    await alert.present();
+  openModalDelete(id){
+    this.modalService.presentModal({
+      component: BaseAlertComponent,
+      cssClass: 'modal-history',
+      mode: 'ios',
+      componentProps: {
+        'title': 'Xóa sản phẩm khỏi lịch sử?',
+        'content': 'Bạn chắc chắn muốn loại bỏ sản phẩm khỏi Lịch sử?',
+        'type': 2,
+        'id': id,
+        
+      }
+    })
   }
+
+  
+ 
   dataProduct = [
     {
       id: 1,
