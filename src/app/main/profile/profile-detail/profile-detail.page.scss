@@ -1,0 +1,48 @@
+.card {
+    padding: 0em 0.8em 0em 0.8em;
+}
+
+form {
+    width: 100%;
+    padding: 0em 0.8em 0em 0.8em;
+}
+
+.submit {
+    display: flex;
+    margin: 3em 0em;
+}
+
+button {
+    height: 2.8em;
+    width: 100%;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.6em;
+    .title-left {
+        display: flex;
+        img {
+            margin-right: 0.5em;
+        }
+    }
+}
+
+ion-item {
+    ion-label {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 0.8em;
+        line-height: 1.3em;
+        color: #8D8D8D;
+    }
+    ion-input {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: #272727;
+    }
+}

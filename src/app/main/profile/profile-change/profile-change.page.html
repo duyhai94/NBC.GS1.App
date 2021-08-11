@@ -5,5 +5,37 @@
 </ion-header>
 
 <ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12">
+                <form [formGroup]="formReset" (ngSubmit)="btnReset()">
+                    <div class="form-group">
+                        <label for="" class="ci-gey-3 ">Mật khẩu hiện tại</label>
+                        <input class="form-group-input" type="password" formControlName="oldPassword" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="ci-gey-3 ">Nhập mật khẩu mới</label>
+                        <input class="form-group-input" [type]="showPass1 ?  'password':'text' " formControlName="newPassword" name="password">
+                        <div class="toggle-btn" (click)="btnTogglePassword(1)">
+                            <img *ngIf="!showPass1" src="assets/icon/icon-eye.svg" alt="">
+                            <img *ngIf="showPass1" src="assets/icon/icon-show-eye.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="ci-gey-3 ">Xác nhận lại</label>
+                        <input class="form-group-input" [type]="showPass2 ?  'password':'text' " formControlName="confPassword" name="confirm">
+                        <div class="toggle-btn" (click)="btnTogglePassword(2)">
+                            <img *ngIf="!showPass2" src="assets/icon/icon-eye.svg" alt="">
+                            <img *ngIf="showPass2" src="assets/icon/icon-show-eye.svg" alt="">
+                        </div>
+                    </div>
+                    <button class="btn-primary-16" type="submit">
+                        Tiếp theo
+                    </button>
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
 
 </ion-content>

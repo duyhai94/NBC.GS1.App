@@ -4,4 +4,110 @@
 
 <ion-content>
 
+    <div class="card">
+        <app-base-card-profile></app-base-card-profile>
+
+    </div>
+
+    <form [formGroup]="formProfile">
+        <!-- title -->
+        <div class="title">
+            <div class="title-left">
+                <img src="assets/icon/icon-note.svg" alt="">
+                <div class="ci-t-danger">
+                    Thông tin chung
+                </div>
+            </div>
+            <div>
+                <img src="assets/icon/icon-dow.svg" alt="">
+            </div>
+        </div>
+
+        <ion-item class="ion-no-padding">
+            <ion-label position="stacked">Họ</ion-label>
+            <ion-input formControlName="lastName"></ion-input>
+        </ion-item>
+        <ion-item class="ion-no-padding">
+            <ion-label position="stacked">Tên</ion-label>
+            <ion-input formControlName="fristName"></ion-input>
+        </ion-item>
+        <ion-item class="ion-no-padding">
+            <ion-label position="stacked">Ngày sinh</ion-label>
+            <ion-input formControlName="dob"></ion-input>
+        </ion-item>
+        <ion-item class="ion-no-padding">
+            <ion-label position="stacked">Giới tính</ion-label>
+            <ion-input formControlName="gender"></ion-input>
+        </ion-item>
+
+        <!-- contact -->
+        <div class="title">
+            <div class="title-left">
+                <img src="assets/icon/icon-note.svg" alt="">
+                <div class="ci-t-danger">
+                    Liên hệ
+                </div>
+            </div>
+            <div>
+                <img src="assets/icon/icon-dow.svg" alt="">
+            </div>
+        </div>
+
+        <ion-item class="ion-no-padding">
+            <ion-label position="stacked">SĐT</ion-label>
+            <ion-input type="tel" formControlName="phone"></ion-input>
+        </ion-item>
+        <ion-item class="ion-no-padding">
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input formControlName="email"></ion-input>
+        </ion-item>
+
+        <!-- address -->
+        <div class="title">
+            <div class="title-left">
+                <img src="assets/icon/icon-note.svg" alt="">
+                <div class="ci-t-danger">
+                    Địa chỉ
+                </div>
+            </div>
+            <div>
+                <img src="assets/icon/icon-dow.svg" alt="">
+            </div>
+        </div>
+
+        <ion-item class="ion-no-padding">
+            <ion-label position="stacked">Tỉnh/ Thành phố</ion-label>
+            <ion-input formControlName="city"></ion-input>
+        </ion-item>
+        <ion-item class="ion-no-padding">
+            <ion-label position="stacked">Quận/ Huyện</ion-label>
+            <ion-input formControlName="district"></ion-input>
+        </ion-item>
+        <ion-item class="ion-no-padding">
+            <ion-label position="stacked">Phường/ Xã</ion-label>
+            <ion-input formControlName="wards"></ion-input>
+        </ion-item>
+        <ion-item class="ion-no-padding">
+            <ion-label position="stacked">Địa chỉ</ion-label>
+            <ion-input formControlName="address"></ion-input>
+        </ion-item>
+
+
+
+        <!-- button -->
+        <div class="submit">
+            <button class="btn-primary-14" (click)="onSave()">
+                Lưu
+            </button>
+
+
+            <button class="btn-light-14">
+            Hủy
+        </button>
+        </div>
+
+
+    </form>
+
+
 </ion-content>
