@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-
-  constructor() { }
+  back ;
+  constructor(
+    private router : Router,
+    private alert : AlertController,
+    private activeRouter: ActivatedRoute
+ 
+  ) { }
 
   ngOnInit() {
+      
+     this.back = this.activeRouter.snapshot.params.back;
+
+      
   }
 
   dataTitle = {
@@ -50,5 +61,35 @@ export class ProfilePage implements OnInit {
       }
     }
     
+  }
+
+    onLogout(){
+      this.alertLogout()
+    }
+
+
+  async alertLogout() {
+    const alert = await this.alert.create({
+      cssClass: 'my-custom-class',
+      header: 'Đăng xuất',
+      message: 'Bạn có muốn đăng xuất tài khoản',
+      buttons: [
+        {
+          text: 'Hủy',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Đăng xuất',
+          handler: () => {
+            this.router.navigateByUrl('index/login');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 }

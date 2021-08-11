@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, NgModule, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, NgModule, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -10,14 +10,20 @@ import { IonicModule } from '@ionic/angular';
 })
 export class BaseHeaderNavComponent implements OnInit {
   @Input() dataHeaderNav;
+  backRouter;
   constructor(
-    private router: Router
+    private router: Router,
+    public activeRouter: ActivatedRoute
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.backRouter = this.router.url
+    
+    
+  }
 
   routerToProfile(){
-    this.router.navigateByUrl('main/profile');
+    this.router.navigate(['main/profile',{back : this.backRouter}]);
   }
   routerToFavourite(){
     this.router.navigateByUrl('main/favourite')

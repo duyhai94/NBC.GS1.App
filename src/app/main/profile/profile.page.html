@@ -1,5 +1,5 @@
 <ion-header>
-    <app-base-header [headerTitle]="'Profile'"></app-base-header>
+    <app-base-header [router]="back" [headerTitle]="'Profile'"></app-base-header>
 </ion-header>
 
 <ion-content>
@@ -15,7 +15,7 @@
                 <app-base-title [dataTitle]="dataTitle.changePass"></app-base-title>
             </ion-col>
             <ion-col size="12" class="list-item">
-                <app-base-title [dataTitle]="dataTitle.logout"></app-base-title>
+                <app-base-title (click)="onLogout()" [dataTitle]="dataTitle.logout"></app-base-title>
             </ion-col>
         </ion-row>
     </ion-grid>

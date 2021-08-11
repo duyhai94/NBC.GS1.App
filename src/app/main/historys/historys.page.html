@@ -4,5 +4,54 @@
 </ion-header>
 
 <ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12" class="ci-gey-3 ion-text-right">
+                Chỉnh sửa
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-list>
+        <ion-item-sliding *ngFor="let i of dataProduct">
+            <ion-item lines="none" class="no-padding">
+                <ion-label>
+                    <div class="product">
+                        <img class="banner" [src]="i.imgProduct" alt="">
+                        <div class="info">
+                            <div class="detail">
+                                <!-- name -->
+                                <div class="ci-h-5 ci-center-item">
+                                    <img class="m-r" *ngIf="i.verify" src="assets/icon/icon-gs1.svg" alt=""> {{i.nameProduct}}
+                                </div>
+                                <!-- rating -->
+                                <div class="ci-t-3 ci-center-item">
+                                    <span class="m-r">{{i.ratting}}</span>
+                                    <img *ngFor="let i of [1,2,3,4,5]" src=" assets/icon/icon-rating-ac.svg " alt=" ">
+                                </div>
+                                <!-- cty -->
+                                <div class="ci-t-3 ci-center-item ">
+                                    <img class="m-r" *ngIf="i.iCheck == true" src="assets/icon/icon-tick-active.svg ">
+                                    <img class="m-r" *ngIf="i.iCheck == false" src="assets/icon/icon-tick.svg "> {{i.company}}
+                                </div>
+                                <div class="ci-t-primary ci-center-item ">
+                                    <span class="m-r">{{i.categories}}</span>
+                                    <img src="assets/icon/icon-forward-b.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="love " (click)="onLove(i.id)">
+                                <img class="love-icon " src="assets/icon/icon-heart-active.svg " alt=" ">
+                            </div>
+                        </div>
+                    </div>
+                </ion-label>
+            </ion-item>
 
+
+            <ion-item-options side="end" mode="ios">
+                <ion-item-option (click)="onDelete(i.id)">
+                    <img src="assets/icon/icon-delete.svg" alt="">
+                </ion-item-option>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
 </ion-content>

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { ModalController } from "@ionic/angular";
+import { ModalController, ModalOptions } from "@ionic/angular";
 import { ModaSuccessComponent } from "../base/moda-success/moda-success.component";
 
 @Injectable({
@@ -13,13 +13,15 @@ export class ModalService{
 
     }
 
-    async modaSuccess() {
-        const modal = await this.modalController.create({
-          component: ModaSuccessComponent,
-          cssClass: 'my-custom-class'
-        });
-        return await modal.present();
-      } 
+    async presentModal(config: ModalOptions) {
+      const modal = await this.modalController.create(config);
+      await modal.present();
+      return modal;
+    }
+  
+    async closeModal(data?) {
+      await this.modalController.dismiss(data);
+    }
 
       
 }
