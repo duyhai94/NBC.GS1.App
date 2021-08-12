@@ -39,7 +39,8 @@
                                 </div>
                             </div>
                             <div class="love " (click)="openModalLove(i.id)">
-                                <img class="love-icon " src="assets/icon/icon-heart-active.svg " alt=" ">
+                                <img *ngIf=" i.iLove == true" class="love-icon " src="assets/icon/icon-heart-active.svg " alt=" ">
+                                <img *ngIf=" i.iLove == false" class="love-icon " src="assets/icon/icon-heart.svg " alt=" ">
                             </div>
                         </div>
                     </div>

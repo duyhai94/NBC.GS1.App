@@ -1,21 +1,18 @@
 <ion-header>
     <app-base-header-nav [dataHeaderNav]="dataHeaderNav"></app-base-header-nav>
     <div class="nav">
-        <ion-segment (ionChange)="segmentChanged($event)">
-            <ion-segment-button value="friends">
-                <ion-label>Friendss</ion-label>
+        <ion-segment value="1" scrollable (ionChange)="segmentChanged($event)">
+            <ion-segment-button value="1">
+                <ion-label>GS1 Việt Nam với doanh nghiệp</ion-label>
             </ion-segment-button>
-            <ion-segment-button value="enemies">
-                <ion-label>Enemies</ion-label>
+            <ion-segment-button value="2">
+                <ion-label>Thông tin khuyến mại</ion-label>
             </ion-segment-button>
-
-            <ion-segment-button value="enemies">
-                <ion-label>Enemieseeeeeeeeee</ion-label>
+            <ion-segment-button value="3">
+                <ion-label>Doanh nghiệp nổi bật</ion-label>
             </ion-segment-button>
         </ion-segment>
-
     </div>
-
 </ion-header>
 <ion-content>
 

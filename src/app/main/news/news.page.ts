@@ -64,8 +64,9 @@ export class NewsPage implements OnInit {
   ngOnInit() {
   }
 
-  segmentChanged(ev){
-    
+  segmentChanged(ev: any){
+      console.log("sdasdas",ev);
+      
   }
 
 }

@@ -68,7 +68,7 @@ export class HistorysPage implements OnInit {
       company: 'Nestle Vietnam',
       categories: 'Nước giải khát',
       iCheck: false,
-      iLove: true,
+      iLove: false,
       verify: false,
     },
     {
@@ -79,7 +79,7 @@ export class HistorysPage implements OnInit {
       company: 'Nestle Vietnam',
       categories: 'Nước giải khát',
       iCheck: false,
-      iLove: true,
+      iLove: false,
       verify: false,
     },
     {

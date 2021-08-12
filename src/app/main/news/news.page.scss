@@ -1,8 +1,17 @@
 ion-segment-button {
-    min-width: none;
+    --indicator-box-shadow: transparent!important;
+    min-width: auto;
+    --background: white;
+    --border-color: none;
+    --background-checked: #002C6C;
+    --color-checked: white;
+    --indicator-color: transparent!important;
+    ion-label {
+        background: none;
+    }
 }
 
-ion-segmen {
+ion-segment {
     --background: none;
 }
 
