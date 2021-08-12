@@ -1,5 +1,10 @@
-.active {
-    filter: invert(11%) sepia(73%) saturate(5274%) hue-rotate(208deg) brightness(46%) contrast(55%)
+ion-tab-button {
+    --color: #939393;
+    --color-selected: #002C6C;
+    // --background-focused: #002C6C;
+    ion-icon {
+        width: 1.3em;
+    }
 }
 
 ion-tab-bar {
