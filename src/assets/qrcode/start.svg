@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="123" height="36" viewBox="0 0 123 36">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Arrow_Left" data-name="Arrow Left" d="M7.441,9.842a.782.782,0,0,0,0,1.086.727.727,0,0,0,1.055,0L13.163,6.12a.78.78,0,0,0,0-1.088L8.49.227a.73.73,0,0,0-1.055,0,.781.781,0,0,0,0,1.086l3.4,3.5H.745a.765.765,0,0,0,0,1.529h10.1Z" transform="translate(0)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Group_20195" data-name="Group 20195" transform="translate(-221 -729.138)">
+    <text id="Bắt_đầu" data-name="Bắt đầu" transform="translate(221 752.138)" fill="#fff" font-size="13" font-family="Montserrat-Medium, Montserrat" font-weight="500" letter-spacing="0.006em"><tspan x="0" y="0">BẮT ĐẦU</tspan></text>
+    <g id="Group_20194" data-name="Group 20194" transform="translate(307.94 729.633)">
+      <circle id="Ellipse_1" data-name="Ellipse 1" cx="18" cy="18" r="18" transform="translate(0.06 -0.496)" fill="#fff"/>
+      <g id="_Icons_Arrow_Left" data-name="_Icons / Arrow Left" transform="translate(11.6 12.492)">
+        <path id="Arrow_Left-2" data-name="Arrow Left" d="M7.441,9.842a.782.782,0,0,0,0,1.086.727.727,0,0,0,1.055,0L13.163,6.12a.78.78,0,0,0,0-1.088L8.49.227a.73.73,0,0,0-1.055,0,.781.781,0,0,0,0,1.086l3.4,3.5H.745a.765.765,0,0,0,0,1.529h10.1Z" transform="translate(0)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

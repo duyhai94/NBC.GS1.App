@@ -1,0 +1,50 @@
+<ion-content padding="true">
+    <ion-slides pager="true" [options]="slideOpts" (getActiveIndex)="getActive($event)" class="slider_welcome" #slides>
+        <ion-slide>
+            <div class="slider1">
+                <img src="assets/qrcode/slider1-img.svg" />
+                <p class="p_s" [style.width.%]="76">Vì sao <span>GS1 Vietnam</span> trở thành <span class="app_f">ứng dụng hàng đầu</span> với người tiêu dùng?</p>
+            </div>
+
+            <div class="btn_abs" (click)="getActive()">
+                <span>Tiếp theo</span>
+                <div class="icon">
+                    <ion-icon src="assets/qrcode/arrl.svg"></ion-icon>
+
+                </div>
+            </div>
+            <p class="ignore" (click)="loginFake()">Bỏ qua</p>
+        </ion-slide>
+        <ion-slide>
+            <div class="slider2">
+                <img src="assets/qrcode/slider2-img.png" />
+                <p [style.font-size.px]="21">Thông tin minh bạch Đầy đủ và Chi tiết</p>
+            </div>
+
+            <div class="btn_abs" (click)="getActive()">
+                <span>Tiếp theo</span>
+                <div class="icon">
+                    <ion-icon src="assets/qrcode/arrl.svg"></ion-icon>
+
+                </div>
+            </div>
+            <p class="ignore" (click)="loginFake()">Bỏ qua</p>
+        </ion-slide>
+        <ion-slide>
+            <div class="slider3">
+                <img src="assets/qrcode/slider3-img.png" />
+                <p [style.font-size.px]="21">
+                    Chủ động - Nhanh chóng - Thuận tiện
+                </p>
+            </div>
+            <div class="btn_abs" (click)="loginFake()">
+                <span>Bắt đầu</span>
+                <div class="icon">
+                    <ion-icon src="assets/qrcode/arrl.svg"></ion-icon>
+
+                </div>
+            </div>
+            <p class="ignore" (click)="loginFake()">Bỏ qua</p>
+        </ion-slide>
+    </ion-slides>
+</ion-content>

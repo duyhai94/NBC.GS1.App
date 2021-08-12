@@ -1,0 +1,149 @@
+.icon_slide {
+    border-radius: 50%;
+    padding: 8px;
+    background-color: var(--ion-color-tertiary);
+    margin-left: 40px;
+}
+
+.button_slide {
+    font-size: 0.9em;
+    font-weight: 500;
+    text-transform: uppercase;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 20px;
+    --padding-start: 40px;
+    --padding-end: 10px;
+}
+
+a {
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.icon_start {
+    font-size: 2.3em;
+}
+
+ion-slide {
+    // padding: 200px 20px 30px 20px;
+    display: block;
+    height: 100%;
+    img {
+        width: 301px;
+        margin-bottom: 20px;
+        @media (max-height: 680px) and (min-height: 569px) {
+            width: 210px !important;
+        }
+        @media (max-height: 569px) {
+            width: 130px !important;
+        }
+    }
+    h2 {
+        font-size: 2em;
+        font-weight: bold;
+    }
+}
+
+ion-slides {
+    height: 100%;
+}
+
+ ::ng-deep .slider_welcome {
+    .swiper-pagination {
+        bottom: 15% !important;
+        width: 150px;
+        @media (max-height: 741px) {
+            bottom: 11% !important;
+        }
+        .swiper-pagination-bullet {
+            border: 1.5px solid #7fb6ff;
+            width: 8px;
+            height: 8px;
+        }
+        .swiper-pagination-bullet-active {
+            background: #fff !important;
+            width: 13px;
+            height: 13px;
+        }
+    }
+}
+
+.slider1 {
+    height: 100%;
+    width: 100%;
+    padding: 100px 20px 30px 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("/assets/qrcode/bg.svg");
+}
+
+.slider2 {
+    height: 100%;
+    width: 100%;
+    padding: 100px 20px 30px 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("/assets/qrcode/bg.svg");
+}
+
+.slider3 {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 131px 20px 30px 20px;
+    background-image: url("/assets/qrcode/bg.svg");
+}
+
+p {
+    color: white;
+    text-align: start;
+    font-size: 0.8em;
+    font-weight: normal;
+    padding: 0 20px;
+    @media (max-height: 680px) {
+        font-size: 0.7em;
+    }
+}
+
+.p_s {
+    font-size: 14px;
+    line-height: 2rem;
+    span {
+        font-size: 22px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .app_f {
+        font-size: 18px !important;
+        font-weight: 500 !important;
+        text-transform: none !important;
+    }
+}
+
+.btn_abs {
+    position: absolute;
+    bottom: 29px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    right: 10px;
+    .icon {
+        display: flex;
+        justify-content: center;
+        margin-left: 10px;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #4643e2;
+    }
+}
+
+.ignore {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
