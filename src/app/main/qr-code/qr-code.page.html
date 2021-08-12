@@ -1,9 +1,22 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>qr-code</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [style.--background]="scanActive ? '#0000000000': '#0000000000'">
+    <img src="assets/112321.png" alt="">
 
-<ion-content>
+    <ion-text color="success">
+        <h4>Quét mã QR/Barcode</h4>
+    </ion-text>
 
+    <div class="scan-box">
+        <p>Đưa mã QR/Barcode vào vùng quét</p>
+        <div id="content" class="scanner_area">
+            <p></p>
+        </div>
+
+        <ion-item [style.margin-top.px]="5" lines="none">
+            <input type="text" [(ngModel)]="code" placeholder="Nhập mã">
+            <ion-icon name="search-outline" color="success" (click)="searchItem()"></ion-icon>
+        </ion-item>
+    </div>
+    <div class="button" (click)="startScan()">
+        <button>Mở camera</button>
+    </div>
 </ion-content>

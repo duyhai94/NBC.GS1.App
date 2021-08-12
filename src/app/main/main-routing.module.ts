@@ -24,6 +24,10 @@ const routes: Routes = [
         path: 'contact',
         loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
       },
+      {
+        path: 'qr-code',
+        loadChildren: () => import('./qr-code/qr-code.module').then( m => m.QrCodePageModule)
+      },
     
       {
         path: '',
@@ -40,10 +44,7 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
-  {
-    path: 'qr-code',
-    loadChildren: () => import('./qr-code/qr-code.module').then( m => m.QrCodePageModule)
-  },
+
  
 
 
