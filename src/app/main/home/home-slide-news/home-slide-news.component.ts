@@ -20,6 +20,8 @@ export class HomeSlideNewsComponent {
       img : 'assets/img/p1.png',
       title: 'Hà Nội: Sẽ bắt buộc truy xuất nguồn gốc nông sản',
       date: '24/02/2020'
+   
+
     },
     {
       img : 'assets/img/p1.png',

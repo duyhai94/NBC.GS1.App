@@ -1,0 +1,34 @@
+<ion-header>
+    <div class="header ">
+        <div (click)="onBack()">
+            <img src="assets/icon/icon-back.svg" alt="">
+        </div>
+        <div class=" ci-h-4 ci-center">
+            <div class="ci-h-4">
+                <img src="assets/icon/icon-logo.svg" alt="">
+            </div>
+        </div>
+        <div class="header-item">
+            <img src="assets/icon/icon-gs1.svg" alt="">
+        </div>
+    </div>
+</ion-header>
+<ion-content>
+    <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide *ngFor="let i of [1,2,3]">
+            <div class="img-slide">
+                <img src="assets/img/p4.png" alt="">
+            </div>
+        </ion-slide>
+    </ion-slides>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12">
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+</ion-content>

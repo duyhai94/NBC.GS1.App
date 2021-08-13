@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-slide-product',
@@ -12,51 +13,68 @@ export class HomeSlideProductComponent implements OnInit {
     slidesPerView: 2.5,
 
   };
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
  
   ngOnInit() {}
- data = [
+  onRouterTo(ev){
+    this.router.navigate(['main/product',{verify:ev}]);
+  }
+  data = [
     {
       img : 'assets/img/p1.png',
       title: ' Sparkling wate',
       date: '24/02/2020',
       iconCheck:'assets/icon/icon-tick-active.svg',
-      iconGS: 'assets/icon/icon-gs1.svg'
+      iconGS: 'assets/icon/icon-gs1.svg',
+      tick: true,
+      verify: true
     },
     {
       img : 'assets/img/p2.png',
       title: ' Sparkling wate',
       date: '24/02/2020',
       iconCheck:'assets/icon/icon-tick-active.svg',
-      iconGS: 'assets/icon/icon-gs1.svg'
+      iconGS: 'assets/icon/icon-gs1.svg',
+      tick: false,
+      verify: false
     },
     {
       img : 'assets/img/p3.png',
       title: ' Sparkling wate',
       date: '24/02/2020',
       iconCheck:'assets/icon/icon-tick-active.svg',
-      iconGS: 'assets/icon/icon-gs1.svg'
+      iconGS: 'assets/icon/icon-gs1.svg',
+      tick: false,
+      verify: false
     },
     {
       img : 'assets/img/p1.png',
       title: ' Sparkling wate',
       date: '24/02/2020',
       iconCheck:'assets/icon/icon-tick-active.svg',
-      iconGS: 'assets/icon/icon-gs1.svg'
+      iconGS: 'assets/icon/icon-gs1.svg',
+      tick: true,
+      verify: true
     },
     {
       img : 'assets/img/p2.png',
       title: ' Sparkling wate',
       date: '24/02/2020',
       iconCheck:'assets/icon/icon-tick-active.svg',
-      iconGS: 'assets/icon/icon-gs1.svg'
+      iconGS: 'assets/icon/icon-gs1.svg',
+      tick: true,
+      verify: true
     },
     {
       img : 'assets/img/p3.png',
       title: ' Sparkling wate',
       date: '24/02/2020',
       iconCheck:'assets/icon/icon-tick-active.svg',
-      iconGS: 'assets/icon/icon-gs1.svg'
+      iconGS: 'assets/icon/icon-gs1.svg',
+      tick: true,
+      verify: true
     },
   ]
 }

@@ -1,8 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, NgZone, OnInit } from '@angular/core';
-import { Plugins } from '@capacitor/core';
+import { BarcodeScanner} from '@capacitor-community/barcode-scanner';
+import { Browser } from '@capacitor/browser';
+
+// import { Plugins } from '@capacitor/core';
 import { LoadingController, Platform } from '@ionic/angular';
-const { BarcodeScanner, Browser } = Plugins;
+// const { BarcodeScanner, Browser } = Plugins;
 
 @Component({
   selector: 'app-qr-code',
@@ -77,7 +80,7 @@ export class QrCodePage implements OnInit,AfterViewInit{
   }
 
   startScan = async () => {
-    BarcodeScanner.hideBackground(); // make background of WebView transparent
+   BarcodeScanner.hideBackground(); // make background of WebView transparent
 
     const result = await BarcodeScanner.startScan(); // start scanning and wait for a result
     this.scanActive = true;
