@@ -1,7 +1,7 @@
 <ion-header>
     <div class="header ">
         <div (click)="onBack()">
-            <img src="assets/icon/icon-back.svg" alt="">
+            <img src="assets/icon/icon-back.svg">
         </div>
         <div class=" ci-h-4 ci-center">
             <div class="ci-h-4">
@@ -9,11 +9,12 @@
             </div>
         </div>
         <div class="header-item">
-            <img src="assets/icon/icon-gs1.svg" alt="">
+            <img *ngIf="icheck == 'true'" src="assets/icon/icon-gs1.svg" alt="">
         </div>
     </div>
 </ion-header>
 <ion-content>
+    <!-- slide -->
     <ion-slides pager="true" [options]="slideOpts">
         <ion-slide *ngFor="let i of [1,2,3]">
             <div class="img-slide">
@@ -23,12 +24,156 @@
     </ion-slides>
 
     <ion-grid>
+        <!-- header-product -->
+        <div class="header-product">
+            <div class="align-item">
+                <div class="ci-h-2">
+                    Ginger Beer
+                </div>
+                <img src="assets/icon/icon-heart.svg">
+            </div>
+            <div class="ci-gey-3">
+                American
+            </div>
+            <div class="align-item">
+                <div>
+                    <img src="assets/icon/icon-rating-ac.svg">
+                    <img src="assets/icon/icon-rating-ac.svg">
+                    <img src="assets/icon/icon-rating-ac.svg">
+                    <img src="assets/icon/icon-rating-none.svg">
+                    <img src="assets/icon/icon-rating-none.svg">
+                </div>
+                <div class="ci-gey-6 ">
+                    <span> ~54.000 VNĐ</span>
+                </div>
+            </div>
+        </div>
+        <!-- verify card -->
+        <div class="header-verify">
+            <div>
+                <img src="assets/icon/not-verify.svg" alt="">
+            </div>
+            <div class="ci-t-danger ion-padding">
+                Chưa được kiểm chứng, xác thực với GS1 Vietnam
+            </div>
+            <div>
+                <img src="assets/icon/ion-danger.svg" alt="">
+            </div>
+        </div>
+        <!-- tem -->
         <ion-row>
-            <ion-col size="12">
-
+            <ion-col size="6" class="ci-center">
+                <img *ngIf="icheck == 'true'" src="assets/img/product/qrcode.png" alt="">
+            </ion-col>
+            <ion-col size="6" class="ci-center">
+                <img src="assets/img/product/tem.png" alt="">
             </ion-col>
         </ion-row>
     </ion-grid>
 
+    <div class="e-title">
+        <app-base-title [dataTitle]="dataTitle.cerf"></app-base-title>
+    </div>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <img class="cert" src="assets/img/product/cert.png" alt="">
+            </ion-col>
+            <ion-col>
+                <img class="cert" src="assets/img/product/cert.png" alt="">
+            </ion-col>
+            <ion-col>
+                <img class="cert" src="assets/img/product/cert.png" alt="">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <!-- info -->
+    <div class="product-card-info">
+        <app-base-title [dataTitle]="dataTitle.info"></app-base-title>
+        <div class="info-tag">
+            <div class="left">
+                <img src="assets/icon/icon-tick-gay.svg" alt="">
+                <div class="ci-gey-3">
+                    Tên:
+                </div>
+            </div>
+            <div class="right ci-t-3">
+                Ginger Beer
+            </div>
+        </div>
+        <div class="info-tag">
+            <div class="left">
+                <img src="assets/icon/icon-tick-gay.svg" alt="">
+                <div class="ci-gey-3">
+                    Ngành hàng:
+                </div>
+            </div>
+            <div class="right ci-t-3">
+                Đồ uống có cồn
+            </div>
+        </div>
+        <div class="info-tag">
+            <div class="left">
+                <img src="assets/icon/icon-tick-gay.svg" alt="">
+                <div class="ci-gey-3">
+                    Mô tả:
+                </div>
+            </div>
+            <div class="right ci-t-3">
+                Sản phẩm Beer Ginger được nhập khẩu trực tiếp từ Hoa Kỳ...
+            </div>
+        </div>
+        <button>Xem thêm</button>
+    </div>
+    <!-- business -->
+    <div class="product-card-info">
+        <app-base-title [dataTitle]="dataTitle.business"></app-base-title>
+        <div class="info-tag">
+            <div class="left">
+                <img src="assets/icon/icon-tick-green.svg" alt="">
+                <div class="ci-gey-3">
+                    Tên:
+                </div>
+            </div>
+            <div class="right ci-t-3">
+                C.ty TNHH Sapioso Food & Drink
+            </div>
+        </div>
+        <div class="info-tag">
+            <div class="left">
+                <img src="assets/icon/icon-tick-green.svg" alt="">
+                <div class="ci-gey-3">
+                    MST: </div>
+            </div>
+            <div class="right ci-t-3">
+                Đồ uống có cồn
+            </div>
+        </div>
+        <div class="info-tag">
+            <div class="left">
+                <img src="assets/icon/icon-tick-green.svg" alt="">
+                <img src="assets/icon/icon-local.svg" alt="">
+            </div>
+            <div class="right ci-t-3">
+                N03-T7 Ngoại Giao Đoàn, Bắc Từ Liêm, Hà Nội </div>
+        </div>
+        <div class="info-tag">
+            <div class="left">
+                <img src="assets/icon/icon-tick-green.svg" alt="">
+                <img src="assets/icon/icon-hostline.svg" alt="">
 
+            </div>
+            <div class="right ci-t-primary">
+                0123456789>> </div>
+        </div>
+    </div>
+    <!-- rating -->
+    <div class="product-rating">
+        <app-base-title [dataTitle]="dataTitle.rating"></app-base-title>
+
+    </div>
+    <div class="e-title">
+        <app-base-title [dataTitle]="dataTitle.product"></app-base-title>
+    </div>
+    <app-home-slide-product></app-home-slide-product>
 </ion-content>

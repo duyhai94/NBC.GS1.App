@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { ProductPageRoutingModule } from './product-routing.module';
 
 import { ProductPage } from './product.page';
+import {  BaseTitleModule } from 'src/app/base/base-title/base-title.component';
+import { HomeSlideProductModule } from '../home/home-slide-product/home-slide-product.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProductPageRoutingModule
+    ProductPageRoutingModule,
+    BaseTitleModule,
+    HomeSlideProductModule
   ],
   declarations: [ProductPage]
 })
