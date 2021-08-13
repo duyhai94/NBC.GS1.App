@@ -22,6 +22,9 @@ export class ProductPage implements OnInit {
     console.log(this.icheck);
     
   }
+  onCert(){
+    this.router.navigateByUrl('main/product/product-cert');
+  }
   onBack(){
     this.router.navigate(['main/home'])
   }
@@ -56,7 +59,7 @@ export class ProductPage implements OnInit {
       right: {
         show : true,
         icon: 'assets/icon/icon-next.svg',
-        link: ''
+        link: 'main/product/product-info'
       }
     },
     business: {

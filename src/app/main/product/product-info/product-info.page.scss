@@ -1,0 +1,22 @@
+@import "../product.page.scss";
+.icon-size {
+    width: 1em;
+    height: 1em;
+}
+
+ion-list {
+    margin-right: 1em;
+}
+
+ion-avatar {
+    margin: 0em !important;
+}
+
+.info-tem {
+    padding: 1em;
+    display: flex;
+}
+
+ion-label {
+    height: auto;
+}

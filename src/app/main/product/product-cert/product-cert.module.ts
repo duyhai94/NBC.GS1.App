@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ProductCertPageRoutingModule } from './product-cert-routing.module';
 
 import { ProductCertPage } from './product-cert.page';
+import { BaseHeaderModule } from 'src/app/base/base-header/base-header.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProductCertPageRoutingModule
+    ProductCertPageRoutingModule,
+    BaseHeaderModule
   ],
   declarations: [ProductCertPage]
 })

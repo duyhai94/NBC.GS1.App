@@ -71,22 +71,14 @@
         </ion-row>
     </ion-grid>
 
-    <div class="e-title">
+    <div class="product-card-cert" (click)="onCert()">
         <app-base-title [dataTitle]="dataTitle.cerf"></app-base-title>
+        <div class="card-img">
+            <img class="cert" src="assets/img/product/cert.png">
+            <img class="cert" src="assets/img/product/cert.png">
+            <img class="cert" src="assets/img/product/cert.png">
+        </div>
     </div>
-    <ion-grid>
-        <ion-row>
-            <ion-col>
-                <img class="cert" src="assets/img/product/cert.png" alt="">
-            </ion-col>
-            <ion-col>
-                <img class="cert" src="assets/img/product/cert.png" alt="">
-            </ion-col>
-            <ion-col>
-                <img class="cert" src="assets/img/product/cert.png" alt="">
-            </ion-col>
-        </ion-row>
-    </ion-grid>
     <!-- info -->
     <div class="product-card-info">
         <app-base-title [dataTitle]="dataTitle.info"></app-base-title>

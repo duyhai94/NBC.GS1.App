@@ -9,10 +9,6 @@ const routes: Routes = [
     component: ProductPage
   },
   {
-    path: 'reviews',
-    loadChildren: () => import('./reviews/reviews.module').then( m => m.ReviewsPageModule)
-  },
-  {
     path: 'product-reviews',
     loadChildren: () => import('./product-reviews/product-reviews.module').then( m => m.ProductReviewsPageModule)
   },
