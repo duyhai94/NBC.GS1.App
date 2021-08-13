@@ -6,7 +6,7 @@ import { BaseHeaderNavModule } from 'src/app/base/base-header-nav/base-header-na
 import { BaseTitleModule } from 'src/app/base/base-title/base-title.component';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HomeSlideNewsModule } from './home-slide-news/home-slide-news.component';
-import { HomeSlideProductComponent } from './home-slide-product/home-slide-product.component';
+import { HomeSlideProductComponent, HomeSlideProductModule } from './home-slide-product/home-slide-product.component';
 import { HomeSlideComponent } from './home-slide/home-slide.component';
 import { HomePage } from './home.page';
 
@@ -22,8 +22,9 @@ import { HomePage } from './home.page';
     BaseHeaderNavModule,
     BaseTitleModule,
     HomeSlideNewsModule,
+    HomeSlideProductModule
 
   ],
-  declarations: [HomePage,HomeSlideComponent,HomeSlideProductComponent, ]
+  declarations: [HomePage,HomeSlideComponent, ]
 })
 export class HomePageModule {}

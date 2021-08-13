@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-home-slide-product',
@@ -78,3 +80,10 @@ export class HomeSlideProductComponent implements OnInit {
     },
   ]
 }
+@NgModule({
+  declarations: [HomeSlideProductComponent],
+  imports: [CommonModule,IonicModule,],
+  exports: [HomeSlideProductComponent]
+
+})
+export class HomeSlideProductModule{}
