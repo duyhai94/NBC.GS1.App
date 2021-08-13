@@ -28,6 +28,9 @@ export class ProductPage implements OnInit {
   onBack(){
     this.router.navigate(['main/home'])
   }
+  onRouterInfo(){
+    this.router.navigateByUrl('main/product/product-info');
+  }
   dataTitle = {
     product: {
       left: {
@@ -71,7 +74,7 @@ export class ProductPage implements OnInit {
       right: {
         show : true,
         icon: 'assets/icon/icon-next.svg',
-        link: ''
+        link: 'main/product/product-business'
       }
     },
     rating: {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-business',
@@ -6,10 +7,54 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-business.page.scss'],
 })
 export class ProductBusinessPage implements OnInit {
+ 
+  datatitle = {
+    dataTitleProduct : {
+      left: {
+        show : true,
+        icon : 'assets/icon/icon-outstanding.svg',
+        text : 'Sản phẩm của doanh nghiệp'
+      },
+      right: {
+        show : true,
+        icon: 'assets/icon/icon-next.svg',
+        link: ''
+      }
+    },
 
-  constructor() { }
+    dataTitleNews : {
+      left: {
+        show : true,
+        icon : 'assets/icon/icon-new.svg',
+        text : 'Bài đăng'
+      },
+      right: {
+        show : true,
+        icon: 'assets/icon/icon-next.svg',
+        link: '/main/news'
+      }
+    },
+    dataTitleCerf : {
+      left: {
+        show : true,
+        icon : 'assets/icon/icon-trademark.svg',
+        text : 'Chứng chỉ, chứng nhận sản phẩm'
+      },
+      right: {
+        show : false,
+      }
+  
+    }
+  }
+  
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
+  onCert(){
+    this.router.navigateByUrl('main/product/product-cert');
 
+  }
 }
