@@ -55,6 +55,9 @@ export class ProductBusinessPage implements OnInit {
   }
   onCert(){
     this.router.navigateByUrl('main/product/product-cert');
+  }
+  onBack(){
+    this.router.navigateByUrl('main/product');
 
   }
 }
