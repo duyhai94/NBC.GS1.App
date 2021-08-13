@@ -85,7 +85,7 @@ export class QrCodePage implements OnInit, AfterViewInit {
 
   async presentLoading() {
     const load = await this.loading.create({
-      duration: 5000,
+      duration: 3000,
     });
     await load.present();
     return load;
