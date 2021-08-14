@@ -44,6 +44,16 @@ export class ProductBusinessPage implements OnInit {
         show : false,
       }
   
+    },
+    business: {
+      left: {
+        show : true,
+        icon : 'assets/icon/icon-buliding.svg',
+        text : 'Giới thiệu doanh nghiệp'
+      },
+      right: {
+        show : false,
+      }
     }
   }
   

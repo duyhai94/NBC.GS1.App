@@ -86,7 +86,7 @@ export class ProductPage implements OnInit {
       right: {
         show : true,
         icon: 'assets/icon/icon-next.svg',
-        link: ''
+        link: 'main/product/product-reviews'
       }
     }
    
