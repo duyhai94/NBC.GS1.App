@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { forkJoin, Observable, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { ProductSerivce } from 'src/app/service/product.service';
+import { ShareService } from 'src/app/service/share.service';
 
 @Component({
   selector: 'app-product',
@@ -27,12 +28,15 @@ export class ProductPage implements OnInit {
   constructor(
     private router: Router,
     private activeRouter: ActivatedRoute,
-    private productService: ProductSerivce
+    private productService: ProductSerivce,
+    private shareService: ShareService
   ) {}
 
   ngOnInit() {
     this.icheck = this.activeRouter.snapshot.params.verify;
-    this.idProduct = this.activeRouter.snapshot.params.id;
+    this.shareService.currentProductId.subscribe(
+      (res) => (this.idProduct = res)
+    );
     this.initProduct(this.idProduct);
   }
   onCert() {
