@@ -99,15 +99,13 @@ export class QrCodePage implements OnInit, AfterViewInit {
     // if the result has content
     if (result.hasContent) {
       this.presentLoading();
-      console.log(result, 'ressult');
-
       if (
         result.content.startsWith('NBC') &&
         result.content.split('-').length == 2
       ) {
         const id = result.content.split('-')[1];
         this.stopScan();
-        this.router.navigate(['main/product']);
+        this.router.navigate(['main/product', { id: id }]);
       } else {
         alert('Sản phẩm này chưa được xác minh bởi GS1 Vietnam !');
         // this.http

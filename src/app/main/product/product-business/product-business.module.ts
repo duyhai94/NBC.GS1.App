@@ -7,13 +7,19 @@ import { IonicModule } from '@ionic/angular';
 import { ProductBusinessPageRoutingModule } from './product-business-routing.module';
 
 import { ProductBusinessPage } from './product-business.page';
+import { HomeSlideProductModule } from '../../home/home-slide-product/home-slide-product.component';
+import { BaseTitleModule } from 'src/app/base/base-title/base-title.component';
+import { HomeSlideNewsModule } from '../../home/home-slide-news/home-slide-news.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProductBusinessPageRoutingModule
+    ProductBusinessPageRoutingModule,
+    HomeSlideProductModule,
+    BaseTitleModule,
+    HomeSlideNewsModule,
   ],
   declarations: [ProductBusinessPage]
 })

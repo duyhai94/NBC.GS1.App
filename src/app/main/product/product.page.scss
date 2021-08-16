@@ -93,9 +93,18 @@ ion-grid {
 }
 
 //cert
-.cert {
-    max-width: 6.5em;
-    object-fit: cover;
+.product-card-cert {
+    padding: 1em;
+    margin: 1em;
+    .card-img {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1em;
+        .cert {
+            max-width: 6.2em;
+            object-fit: cover;
+        }
+    }
 }
 
 //card

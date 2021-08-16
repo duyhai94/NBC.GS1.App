@@ -1,9 +1,143 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>product-business</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+    <div class="header-business">
+        <div class="header-banner">
+            <img src="assets/img/product/product-banner.png" alt="">
+        </div>
+        <div class="header-card">
+            <div class="card-logo">
+                <img src="assets/img/product/product-logo.png" alt="">
+            </div>
+            <div class="card-info">
+                <div class="ci-h-3">Sapioso Food & Drink</div>
+                <div class="ci-t-primary verify">
+                    <img src="assets/icon/icon-tick-active.svg" alt=""> Verified
+                </div>
+                <div>
+                    <img src="assets/icon/icon-rating-ac.svg">
+                    <img src="assets/icon/icon-rating-ac.svg">
+                    <img src="assets/icon/icon-rating-ac.svg">
+                    <img src="assets/icon/icon-rating-none.svg">
+                    <img src="assets/icon/icon-rating-none.svg">
+                </div>
+                <div class="ci-gey-2">1250 lượt đánh giá</div>
 
+            </div>
+            <div class="card-icon">
+                <img src="assets/icon/icon-next.svg" alt="">
+            </div>
+        </div>
+        <div class="header-button" (click)="onBack()">
+            <img src="assets/icon/icon-back.svg" alt="">
+        </div>
+    </div>
+
+
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="4" class="box-center">
+                <div class="ci-h-4">12</div>
+                <div class="ci-gey-3">Sản phẩm</div>
+            </ion-col>
+            <ion-col size="4" class="box-center">
+                <div class="ci-h-4">156</div>
+                <div class="ci-gey-3">Người theo dõi</div>
+            </ion-col>
+            <ion-col size="4" class="box-center">
+                <div class="ci-h-4">1024</div>
+                <div class="ci-gey-3">Lượt quét</div>
+            </ion-col>
+
+            <ion-col size="6">
+                <button class="btn-primary-14">
+                Theo dõi
+              </button>
+            </ion-col>
+            <ion-col size="3">
+                <button>
+                  <img src="assets/img/product/Facebook.png" alt="">
+                </button>
+            </ion-col>
+            <ion-col size="3">
+                <button>               
+                   <img src="assets/img/product/Web.png" alt="">
+              </button>
+
+            </ion-col>
+
+        </ion-row>
+
+        <ion-row>
+            <!-- business -->
+            <div class="product-card-info">
+                <app-base-title [dataTitle]="datatitle.business"></app-base-title>
+                <div class="info-tag">
+                    <div class="left">
+                        <img src="assets/icon/icon-tick-green.svg" alt="">
+                        <div class="ci-gey-3">
+                            Tên:
+                        </div>
+                    </div>
+                    <div class="right ci-t-3">
+                        C.ty TNHH Sapioso Food & Drink
+                    </div>
+                </div>
+                <div class="info-tag">
+                    <div class="left">
+                        <img src="assets/icon/icon-tick-green.svg" alt="">
+                        <div class="ci-gey-3">
+                            MST: </div>
+                    </div>
+                    <div class="right ci-t-3">
+                        Đồ uống có cồn
+                    </div>
+                </div>
+                <div class="info-tag">
+                    <div class="left">
+                        <img src="assets/icon/icon-tick-green.svg" alt="">
+                        <img src="assets/icon/icon-local.svg" alt="">
+                    </div>
+                    <div class="right ci-t-3">
+                        N03-T7 Ngoại Giao Đoàn, Bắc Từ Liêm, Hà Nội </div>
+                </div>
+                <div class="info-tag">
+                    <div class="left">
+                        <img src="assets/icon/icon-tick-green.svg" alt="">
+                        <img src="assets/icon/icon-hostline.svg" alt="">
+
+                    </div>
+                    <div class="right ci-t-primary">
+                        0123456789>> </div>
+                </div>
+            </div>
+        </ion-row>
+        <ion-row>
+            <ion-col size="12">
+                <app-base-title [dataTitle]="datatitle.dataTitleProduct"></app-base-title>
+
+            </ion-col>
+            <ion-col size="12">
+                <app-home-slide-product></app-home-slide-product>
+            </ion-col>
+            <ion-col size="12">
+                <app-base-title [dataTitle]="datatitle.dataTitleNews"></app-base-title>
+            </ion-col>
+            <ion-col size="12">
+                <app-home-slide-news></app-home-slide-news>
+            </ion-col>
+
+            <ion-col size="12" (click)="onCert()">
+                <app-base-title [dataTitle]="datatitle.dataTitleCerf"></app-base-title>
+            </ion-col>
+            <ion-col size="4">
+                <img class="cert" src="assets/img/product/cert.png">
+            </ion-col>
+            <ion-col size="4">
+                <img class="cert" src="assets/img/product/cert.png">
+            </ion-col>
+            <ion-col size="4">
+                <img class="cert" src="assets/img/product/cert.png">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
