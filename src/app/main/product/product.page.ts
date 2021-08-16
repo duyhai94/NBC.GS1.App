@@ -12,6 +12,7 @@ import { ProductSerivce } from 'src/app/service/product.service';
 })
 export class ProductPage implements OnInit {
   icheck;
+  check = true;
   slideOpts = {
     initialSlide: 1,
     speed: 400,
@@ -22,6 +23,7 @@ export class ProductPage implements OnInit {
   companyProduct$: Observable<any>;
   mediaProduct$: Observable<any>;
   certProduct$: Observable<any>;
+  overallRating;
   constructor(
     private router: Router,
     private activeRouter: ActivatedRoute,
@@ -32,7 +34,6 @@ export class ProductPage implements OnInit {
     this.icheck = this.activeRouter.snapshot.params.verify;
     this.idProduct = this.activeRouter.snapshot.params.id;
     this.initProduct(this.idProduct);
-
   }
   onCert() {
     this.router.navigateByUrl('main/product/product-cert');
@@ -123,6 +124,10 @@ export class ProductPage implements OnInit {
       .subscribe(
         ([detailProduct, companyProduct, mediaProduct, certProduct]) => {
           this.detailProduct$ = of(detailProduct.payload);
+          this.overallRating = {
+            rate: detailProduct.payload.RatingAVG,
+            number: detailProduct.payload.RatingNumber,
+          };
           this.companyProduct$ = of(companyProduct.payload);
           this.mediaProduct$ = of(mediaProduct.payload);
           this.certProduct$ = of(certProduct.payload);

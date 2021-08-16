@@ -7,8 +7,10 @@ import { IonicModule } from '@ionic/angular';
 import { ProductPageRoutingModule } from './product-routing.module';
 
 import { ProductPage } from './product.page';
-import {  BaseTitleModule } from 'src/app/base/base-title/base-title.component';
+import { BaseTitleModule } from 'src/app/base/base-title/base-title.component';
 import { HomeSlideProductModule } from '../home/home-slide-product/home-slide-product.component';
+import { IonicRatingComponentModule } from 'ionic-rating-component';
+import { BarRatingModule } from 'ngx-bar-rating';
 
 @NgModule({
   imports: [
@@ -17,8 +19,10 @@ import { HomeSlideProductModule } from '../home/home-slide-product/home-slide-pr
     IonicModule,
     ProductPageRoutingModule,
     BaseTitleModule,
-    HomeSlideProductModule
+    HomeSlideProductModule,
+    IonicRatingComponentModule,
+    BarRatingModule
   ],
-  declarations: [ProductPage]
+  declarations: [ProductPage],
 })
 export class ProductPageModule {}
