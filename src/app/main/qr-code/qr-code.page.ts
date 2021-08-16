@@ -1,6 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, NgZone, OnInit } from '@angular/core';
-import { BarcodeScanner} from '@capacitor-community/barcode-scanner';
+import { Content } from '@angular/compiler/src/render3/r3_ast';
+import {
+  AfterViewInit,
+  Component,
+  NgZone,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
+import { Router } from '@angular/router';
+import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 import { Browser } from '@capacitor/browser';
 
 // import { Plugins } from '@capacitor/core';
@@ -12,20 +20,21 @@ import { LoadingController, Platform } from '@ionic/angular';
   templateUrl: './qr-code.page.html',
   styleUrls: ['./qr-code.page.scss'],
 })
-export class QrCodePage implements OnInit,AfterViewInit{
+export class QrCodePage implements OnInit, AfterViewInit {
   scanActive = false;
   code = '';
   constructor(
     private zone: NgZone,
     private loading: LoadingController,
     private platform: Platform,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) {}
 
   ngOnInit() {
-    this.platform.backButton.subscribeWithPriority(1, () => {
-      this.startScan();
-    });
+    // this.platform.backButton.subscribeWithPriority(1, () => {
+    //   this.startScan();
+    // });
   }
 
   ngAfterViewInit() {
@@ -33,7 +42,9 @@ export class QrCodePage implements OnInit,AfterViewInit{
     this.didUserGrantPermission();
     this.startScan();
   }
-
+  ionViewDidLeave() {
+    BarcodeScanner.showBackground();
+  }
   searchItem() {
     this.presentLoading();
     this.http
@@ -47,6 +58,7 @@ export class QrCodePage implements OnInit,AfterViewInit{
       )
       .subscribe(
         (res: any) => {
+          console.log(res);
           this.loading.dismiss();
           if (!res.payload.ProductId) {
             alert('Sản phẩm này chưa được xác minh bởi GS1 Vietnam !');
@@ -65,7 +77,7 @@ export class QrCodePage implements OnInit,AfterViewInit{
       Browser.open({
         url: link,
       }).then((a) => {
-        console.log(a);
+        console.log(a, 'url');
         // this.startScan();
       });
     });
@@ -73,52 +85,54 @@ export class QrCodePage implements OnInit,AfterViewInit{
 
   async presentLoading() {
     const load = await this.loading.create({
-      duration: 5000,
+      duration: 3000,
     });
     await load.present();
     return load;
   }
 
   startScan = async () => {
-   BarcodeScanner.hideBackground(); // make background of WebView transparent
+    BarcodeScanner.hideBackground(); // make background of WebView transparent
 
     const result = await BarcodeScanner.startScan(); // start scanning and wait for a result
     this.scanActive = true;
     // if the result has content
     if (result.hasContent) {
       this.presentLoading();
+      console.log(result, 'ressult');
+
       if (
-        result.content.startsWith('http://') ||
-        result.content.startsWith('https://')
+        result.content.startsWith('NBC') &&
+        result.content.split('-').length == 2
       ) {
-        if (result.content.includes('mbtt-client-bddb0.web.app')) {
-          this.openQrLink(result.content);
-        } else {
-          alert('Sản phẩm này chưa được xác minh bởi GS1 Vietnam !');
-        }
+        const id = result.content.split('-')[1];
+        this.stopScan();
+        this.router.navigate(['main/product']);
       } else {
-        this.http
-          .get(
-            'https://fgehlb1to6.execute-api.ap-southeast-1.amazonaws.com/prod/scan/product',
-            {
-              params: {
-                productCode: result.content,
-              },
-            }
-          )
-          .subscribe(
-            (res: any) => {
-              this.loading.dismiss();
-              if (!res.payload.ProductId) {
-                alert('Sản phẩm này chưa được xác minh bởi GS1 Vietnam !');
-              } else {
-                this.openQrLink(
-                  'https://mbtt-client-bddb0.web.app/' + res.payload.ProductId
-                );
-              }
-            },
-            (err) => alert('Sản phẩm này chưa được xác minh bởi GS1 Vietnam !')
-          );
+        alert('Sản phẩm này chưa được xác minh bởi GS1 Vietnam !');
+        // this.http
+        //   .get(
+        //     'https://fgehlb1to6.execute-api.ap-southeast-1.amazonaws.com/prod/scan/product',
+        //     {
+        //       params: {
+        //         productCode: result.content,
+        //       },
+        //     }
+        //   )
+        //   .subscribe(
+        //     (res: any) => {
+        //       console.log(res, 'no HTTP');
+        //       this.loading.dismiss();
+        //       if (!res.payload.ProductId) {
+        //         alert('Sản phẩm này chưa được xác minh bởi GS1 Vietnam !');
+        //       } else {
+        //         this.openQrLink(
+        //           'https://mbtt-client-bddb0.web.app/' + res.payload.ProductId
+        //         );
+        //       }
+        //     },
+        //     (err) => alert('Sản phẩm này chưa được xác minh bởi GS1 Vietnam !')
+        //   );
       }
     }
   };
@@ -195,5 +209,4 @@ export class QrCodePage implements OnInit,AfterViewInit{
     // user did not grant the permission, so he must have declined the request
     return false;
   };
-
 }
