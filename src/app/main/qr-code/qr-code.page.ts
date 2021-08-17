@@ -13,6 +13,7 @@ import { Browser } from '@capacitor/browser';
 
 // import { Plugins } from '@capacitor/core';
 import { LoadingController, Platform } from '@ionic/angular';
+import { ShareService } from 'src/app/service/share.service';
 // const { BarcodeScanner, Browser } = Plugins;
 
 @Component({
@@ -28,7 +29,8 @@ export class QrCodePage implements OnInit, AfterViewInit {
     private loading: LoadingController,
     private platform: Platform,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private shareService: ShareService
   ) {}
 
   ngOnInit() {
@@ -90,7 +92,10 @@ export class QrCodePage implements OnInit, AfterViewInit {
     await load.present();
     return load;
   }
-
+  test() {
+    this.shareService.changeProductId(2);
+    this.router.navigate(['main/product']);
+  }
   startScan = async () => {
     BarcodeScanner.hideBackground(); // make background of WebView transparent
 
@@ -99,13 +104,12 @@ export class QrCodePage implements OnInit, AfterViewInit {
     // if the result has content
     if (result.hasContent) {
       this.presentLoading();
-      console.log(result, 'ressult');
-
       if (
         result.content.startsWith('NBC') &&
         result.content.split('-').length == 2
       ) {
         const id = result.content.split('-')[1];
+        this.shareService.changeProductId(id);
         this.stopScan();
         this.router.navigate(['main/product']);
       } else {

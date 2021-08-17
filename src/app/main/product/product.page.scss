@@ -34,7 +34,7 @@
 
 ::ng-deep {
     .swiper-pagination-bullet {
-        --bullet-background: #8D8D8D!important;
+        --bullet-background: #8d8d8d !important;
         opacity: 1;
         border-radius: 50% !important;
     }
@@ -45,7 +45,7 @@
     }
     .swiper-pagination-fraction,
     .swiper-pagination-custom,
-    .swiper-container-horizontal>.swiper-pagination-bullets {
+    .swiper-container-horizontal > .swiper-pagination-bullets {
         bottom: 0.25em;
         width: 100%;
     }
@@ -80,6 +80,12 @@ ion-grid {
     margin: 1em 0em;
 }
 
+.has-verify {
+    background-color: #56b858;
+    border: none;
+    color: #ffffff;
+}
+
 //tem
 .header-tem {
     display: flex;
@@ -109,14 +115,14 @@ ion-grid {
 
 //card
 .product-card-info {
-    background-color: #F7F7F7;
+    background-color: #f7f7f7;
     border-radius: 1em;
     padding: 1em;
     margin: 1em;
     .info-tag {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         margin: 0.5em 0em;
         width: 100%;
         .left {
@@ -129,6 +135,18 @@ ion-grid {
         }
         .right {
             text-align: right;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            max-width: 70%;
+        }
+        .description {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            max-width: 70%;
         }
     }
     button {
@@ -148,7 +166,7 @@ ion-grid {
 
 // rating
 .product-rating {
-    background-color: #F7F7F7;
+    background-color: #f7f7f7;
     border-radius: 1em;
     padding: 1em;
     margin: 1em;

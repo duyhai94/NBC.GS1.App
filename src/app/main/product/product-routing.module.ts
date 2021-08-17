@@ -8,7 +8,6 @@ const routes: Routes = [
     path: '',
     component: ProductPage
   },
-
   {
     path: 'product-reviews',
     loadChildren: () => import('./product-reviews/product-reviews.module').then( m => m.ProductReviewsPageModule)

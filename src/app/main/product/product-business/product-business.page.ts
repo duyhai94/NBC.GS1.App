@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { tap } from 'rxjs/operators';
+import { ProductSerivce } from 'src/app/service/product.service';
+import { ShareService } from 'src/app/service/share.service';
 
 @Component({
   selector: 'app-product-business',
@@ -7,67 +10,85 @@ import { Router } from '@angular/router';
   styleUrls: ['./product-business.page.scss'],
 })
 export class ProductBusinessPage implements OnInit {
- 
   datatitle = {
-    dataTitleProduct : {
+    dataTitleProduct: {
       left: {
-        show : true,
-        icon : 'assets/icon/icon-outstanding.svg',
-        text : 'Sản phẩm của doanh nghiệp'
+        show: true,
+        icon: 'assets/icon/icon-outstanding.svg',
+        text: 'Sản phẩm của doanh nghiệp',
       },
       right: {
-        show : true,
+        show: true,
         icon: 'assets/icon/icon-next.svg',
-        link: ''
-      }
+        link: '',
+      },
     },
 
-    dataTitleNews : {
+    dataTitleNews: {
       left: {
-        show : true,
-        icon : 'assets/icon/icon-new.svg',
-        text : 'Bài đăng'
+        show: true,
+        icon: 'assets/icon/icon-new.svg',
+        text: 'Bài đăng',
       },
       right: {
-        show : true,
+        show: true,
         icon: 'assets/icon/icon-next.svg',
-        link: '/main/news'
-      }
+        link: '/main/news',
+      },
     },
-    dataTitleCerf : {
+    dataTitleCerf: {
       left: {
-        show : true,
-        icon : 'assets/icon/icon-trademark.svg',
-        text : 'Chứng chỉ, chứng nhận sản phẩm'
+        show: true,
+        icon: 'assets/icon/icon-trademark.svg',
+        text: 'Chứng chỉ, chứng nhận sản phẩm',
       },
       right: {
-        show : false,
-      }
-  
+        show: false,
+      },
     },
     business: {
       left: {
-        show : true,
-        icon : 'assets/icon/icon-buliding.svg',
-        text : 'Giới thiệu doanh nghiệp'
+        show: true,
+        icon: 'assets/icon/icon-buliding.svg',
+        text: 'Giới thiệu doanh nghiệp',
       },
       right: {
-        show : false,
-      }
-    }
-  }
-  
+        show: false,
+      },
+    },
+  };
+  idProduct;
+  detailCompany;
+  relateProduct;
   constructor(
-    private router: Router
-  ) { }
+    private router: Router,
+    private shareService: ShareService,
+    private productService: ProductSerivce
+  ) {}
 
   ngOnInit() {
+    this.shareService.currentProductId.subscribe(
+      (res) => (this.idProduct = res)
+    );
+    this.productService
+      .companyProduct(this.idProduct)
+      .pipe(
+        tap((company) => {
+          this.productService
+            .getRelateProduct(company.payload.CompanyId)
+            .subscribe((relatePro) => {
+              this.relateProduct = relatePro.payload;
+              console.log(this.relateProduct);
+            });
+        })
+      )
+      .subscribe((company) => (this.detailCompany = company.payload));
   }
-  onCert(){
+
+  onCert() {
     this.router.navigateByUrl('main/product/product-cert');
   }
-  onBack(){
+  onBack() {
     this.router.navigateByUrl('main/product');
-
   }
 }

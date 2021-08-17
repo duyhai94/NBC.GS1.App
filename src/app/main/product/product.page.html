@@ -1,173 +1,169 @@
 <ion-header>
-    <div class="header ">
-        <div (click)="onBack()">
-            <img src="assets/icon/icon-back.svg">
-        </div>
-        <div class=" ci-h-4 ci-center">
-            <div class="ci-h-4">
-                <img src="assets/icon/icon-logo.svg" alt="">
-            </div>
-        </div>
-        <div class="header-item">
-            <img *ngIf="icheck == 'true'" src="assets/icon/icon-gs1.svg" alt="">
-        </div>
+  <div class="header">
+    <div (click)="onBack()">
+      <img src="assets/icon/icon-back.svg" />
     </div>
+    <div class="ci-h-4 ci-center">
+      <div class="ci-h-4">
+        <img src="assets/icon/icon-logo.svg" alt="" />
+      </div>
+    </div>
+    <div class="header-item">
+      <img *ngIf="icheck == 'true'" src="assets/icon/icon-gs1.svg" alt="" />
+    </div>
+  </div>
 </ion-header>
 <ion-content>
-    <!-- slide -->
-    <ion-slides pager="true" [options]="slideOpts">
-        <ion-slide *ngFor="let i of [1,2,3]">
-            <div class="img-slide">
-                <img src="assets/img/p4.png" alt="">
-            </div>
+  <!-- slide -->
+  <ng-container *ngIf="detailProduct$ | async as detailProduct">
+    <ng-container *ngIf="mediaProduct$ | async as mediaProduct">
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide *ngFor="let i of mediaProduct">
+          <div class="img-slide">
+            <img [src]="i.MediaURL" alt="" />
+          </div>
         </ion-slide>
-    </ion-slides>
+      </ion-slides>
+    </ng-container>
 
     <ion-grid>
-        <!-- header-product -->
-        <div class="header-product">
-            <div class="align-item">
-                <div class="ci-h-2">
-                    Ginger Beer
-                </div>
-                <img src="assets/icon/icon-heart.svg">
-            </div>
-            <div class="ci-gey-3">
-                American
-            </div>
-            <div class="align-item">
-                <div>
-                    <img src="assets/icon/icon-rating-ac.svg">
-                    <img src="assets/icon/icon-rating-ac.svg">
-                    <img src="assets/icon/icon-rating-ac.svg">
-                    <img src="assets/icon/icon-rating-none.svg">
-                    <img src="assets/icon/icon-rating-none.svg">
-                </div>
-                <div class="ci-gey-6 ">
-                    <span> ~54.000 VNĐ</span>
-                </div>
-            </div>
+      <!-- header-product -->
+      <div class="header-product">
+        <div class="align-item">
+          <div class="ci-h-2">{{detailProduct.Name}}</div>
+          <img src="assets/icon/icon-heart.svg" />
         </div>
-        <!-- verify card -->
+        <div class="ci-gey-3">{{detailProduct.Source}}</div>
+        <div class="align-item">
+          <div>
+            <img src="assets/icon/icon-rating-ac.svg" />
+            <img src="assets/icon/icon-rating-ac.svg" />
+            <img src="assets/icon/icon-rating-ac.svg" />
+            <img src="assets/icon/icon-rating-none.svg" />
+            <img src="assets/icon/icon-rating-none.svg" />
+          </div>
+          <div class="ci-gey-6">
+            <span> ~{{detailProduct.Price | currency:'VND':'symbol' }}</span>
+          </div>
+        </div>
+      </div>
+      <!-- verify card -->
+      <ng-template *ngIf="check==false else verify">
         <div class="header-verify">
-            <div>
-                <img src="assets/icon/not-verify.svg" alt="">
-            </div>
-            <div class="ci-t-danger ion-padding">
-                Chưa được kiểm chứng, xác thực với GS1 Vietnam
-            </div>
-            <div>
-                <img src="assets/icon/ion-danger.svg" alt="">
-            </div>
+          <div>
+            <img src="assets/icon/not-verify.svg" alt="" />
+          </div>
+          <div class="ci-t-danger ion-padding">
+            Chưa được kiểm chứng, xác thực với GS1 Vietnam
+          </div>
+          <div>
+            <img src="assets/icon/ion-danger.svg" alt="" />
+          </div>
         </div>
-        <!-- tem -->
-        <ion-row>
-            <ion-col size="6" class="ci-center">
-                <img *ngIf="icheck == 'true'" src="assets/img/product/qrcode.png" alt="">
-            </ion-col>
-            <ion-col size="6" class="ci-center">
-                <img src="assets/img/product/tem.png" alt="">
-            </ion-col>
-        </ion-row>
+      </ng-template>
+      <ng-template #verify>
+        <div class="header-verify has-verify">
+          <div>
+            <img src="assets/icon/icon-has-verify.svg" alt="" />
+          </div>
+          <div class="ion-padding">
+            Đã được kiểm chứng, xác thực với GS1 Vietnam
+          </div>
+          <div>
+          </div>
+        </div>
+      </ng-template>
+      <!-- tem -->
+      <ion-row>
+        <ion-col size="6" class="ci-center">
+          <img *ngIf="icheck == 'true'" [src]="detailProduct.MediaURL" alt="" />
+        </ion-col>
+        <ion-col size="6" class="ci-center">
+          <img src="assets/img/product/tem.png" alt="" />
+        </ion-col>
+      </ion-row>
     </ion-grid>
 
     <div class="product-card-cert" (click)="onCert()">
-        <app-base-title [dataTitle]="dataTitle.cerf"></app-base-title>
+      <app-base-title [dataTitle]="dataTitle.cerf"></app-base-title>
+      <ng-container *ngIf="certProduct$ | async as certProduct">
         <div class="card-img">
-            <img class="cert" src="assets/img/product/cert.png">
-            <img class="cert" src="assets/img/product/cert.png">
-            <img class="cert" src="assets/img/product/cert.png">
+          <img class="cert" [src]="i.MediaURL" *ngFor="let i of certProduct" />
+          <!-- <img class="cert" src="assets/img/product/cert.png" />
+                <img class="cert" src="assets/img/product/cert.png" /> -->
         </div>
+      </ng-container>
     </div>
     <!-- info -->
     <div class="product-card-info">
-        <app-base-title [dataTitle]="dataTitle.info"></app-base-title>
-        <div class="info-tag">
-            <div class="left">
-                <img src="assets/icon/icon-tick-gay.svg" alt="">
-                <div class="ci-gey-3">
-                    Tên:
-                </div>
-            </div>
-            <div class="right ci-t-3">
-                Ginger Beer
-            </div>
+      <app-base-title [dataTitle]="dataTitle.info"></app-base-title>
+      <div class="info-tag">
+        <div class="left">
+          <img src="assets/icon/icon-tick-gay.svg" alt="" />
+          <div class="ci-gey-3">Tên:</div>
         </div>
-        <div class="info-tag">
-            <div class="left">
-                <img src="assets/icon/icon-tick-gay.svg" alt="">
-                <div class="ci-gey-3">
-                    Ngành hàng:
-                </div>
-            </div>
-            <div class="right ci-t-3">
-                Đồ uống có cồn
-            </div>
+        <div class="right ci-t-3">{{detailProduct.Name}}</div>
+      </div>
+      <div class="info-tag">
+        <div class="left">
+          <img src="assets/icon/icon-tick-gay.svg" alt="" />
+          <div class="ci-gey-3">Ngành hàng:</div>
         </div>
-        <div class="info-tag">
-            <div class="left">
-                <img src="assets/icon/icon-tick-gay.svg" alt="">
-                <div class="ci-gey-3">
-                    Mô tả:
-                </div>
-            </div>
-            <div class="right ci-t-3">
-                Sản phẩm Beer Ginger được nhập khẩu trực tiếp từ Hoa Kỳ...
-            </div>
+        <!-- <div class="right ci-t-3">Đồ uống có cồn</div> -->
+      </div>
+      <div class="info-tag">
+        <div class="left">
+          <img src="assets/icon/icon-tick-gay.svg" alt="" />
+          <div class="ci-gey-3">Mô tả:</div>
         </div>
-        <button (click)="onRouterInfo()">Xem thêm</button>
+        <div class="right ci-t-3 description">{{detailProduct.Description}}</div>
+      </div>
+      <button (click)="onRouterInfo()">Xem thêm</button>
     </div>
     <!-- business -->
-    <div class="product-card-info">
+    <ng-container *ngIf="companyProduct$ | async as company">
+      <div class="product-card-info">
         <app-base-title [dataTitle]="dataTitle.business"></app-base-title>
         <div class="info-tag">
-            <div class="left">
-                <img src="assets/icon/icon-tick-green.svg" alt="">
-                <div class="ci-gey-3">
-                    Tên:
-                </div>
-            </div>
-            <div class="right ci-t-3">
-                C.ty TNHH Sapioso Food & Drink
-            </div>
+          <div class="left">
+            <img src="assets/icon/icon-tick-green.svg" alt="" />
+            <div class="ci-gey-3">Tên:</div>
+          </div>
+          <div class="right ci-t-3">{{company.Name}}</div>
         </div>
         <div class="info-tag">
-            <div class="left">
-                <img src="assets/icon/icon-tick-green.svg" alt="">
-                <div class="ci-gey-3">
-                    MST: </div>
-            </div>
-            <div class="right ci-t-3">
-                Đồ uống có cồn
-            </div>
+          <div class="left">
+            <img src="assets/icon/icon-tick-green.svg" alt="" />
+            <div class="ci-gey-3">MST:</div>
+          </div>
+          <div class="right ci-t-3">{{company.TaxCode}}</div>
         </div>
         <div class="info-tag">
-            <div class="left">
-                <img src="assets/icon/icon-tick-green.svg" alt="">
-                <img src="assets/icon/icon-local.svg" alt="">
-            </div>
-            <div class="right ci-t-3">
-                N03-T7 Ngoại Giao Đoàn, Bắc Từ Liêm, Hà Nội </div>
-        </div>
-        <div class="info-tag">
-            <div class="left">
-                <img src="assets/icon/icon-tick-green.svg" alt="">
-                <img src="assets/icon/icon-hostline.svg" alt="">
+          <div class="left">
+            <img src="assets/icon/icon-tick-green.svg" alt="" />
+            <img src="assets/icon/icon-local.svg" alt="" />
+          </div>
 
-            </div>
-            <div class="right ci-t-primary">
-                0123456789>> </div>
+          <div class="right ci-t-3">{{company.Address}}</div>
         </div>
-    </div>
+        <div class="info-tag">
+          <div class="left">
+            <img src="assets/icon/icon-tick-green.svg" alt="" />
+            <img src="assets/icon/icon-hostline.svg" alt="" />
+          </div>
+          <div class="right ci-t-primary">0123456789</div>
+        </div>
+      </div>
+    </ng-container>
+
     <!-- rating -->
     <div class="product-rating">
-        <app-base-title [dataTitle]="dataTitle.rating"></app-base-title>
-        <div class="info-tag">
-
-        </div>
+      <app-base-title [dataTitle]="dataTitle.rating"></app-base-title>
+      <div class="info-tag"></div>
     </div>
     <div class="e-title">
-        <app-base-title [dataTitle]="dataTitle.product"></app-base-title>
+      <app-base-title [dataTitle]="dataTitle.product"></app-base-title>
     </div>
     <app-home-slide-product></app-home-slide-product>
+  </ng-container>
 </ion-content>

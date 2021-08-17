@@ -26,7 +26,7 @@ export class HomeSlideProductComponent implements OnInit {
   data = [
     {
       img : 'assets/img/p1.png',
-      title: ' Sparkling wate',
+      title: 'Dầu xả gừng trắng kích mọc tóc Weilaiya Ginger 250ml',
       date: '24/02/2020',
       iconCheck:'assets/icon/icon-tick-active.svg',
       iconGS: 'assets/icon/icon-gs1.svg',
@@ -35,7 +35,7 @@ export class HomeSlideProductComponent implements OnInit {
     },
     {
       img : 'assets/img/p2.png',
-      title: ' Sparkling wate',
+      title: 'Dầu xả gừng trắng kích mọc tóc Weilaiya Ginger 250ml',
       date: '24/02/2020',
       iconCheck:'assets/icon/icon-tick-active.svg',
       iconGS: 'assets/icon/icon-gs1.svg',
@@ -44,7 +44,7 @@ export class HomeSlideProductComponent implements OnInit {
     },
     {
       img : 'assets/img/p3.png',
-      title: ' Sparkling wate',
+      title: 'Dầu xả gừng trắng kích mọc tóc Weilaiya Ginger 250ml',
       date: '24/02/2020',
       iconCheck:'assets/icon/icon-tick-active.svg',
       iconGS: 'assets/icon/icon-gs1.svg',
@@ -53,7 +53,7 @@ export class HomeSlideProductComponent implements OnInit {
     },
     {
       img : 'assets/img/p1.png',
-      title: ' Sparkling wate',
+      title: 'Dầu xả gừng trắng kích mọc tóc Weilaiya Ginger 250ml',
       date: '24/02/2020',
       iconCheck:'assets/icon/icon-tick-active.svg',
       iconGS: 'assets/icon/icon-gs1.svg',
@@ -62,7 +62,7 @@ export class HomeSlideProductComponent implements OnInit {
     },
     {
       img : 'assets/img/p2.png',
-      title: ' Sparkling wate',
+      title: 'Dầu xả gừng trắng kích mọc tóc Weilaiya Ginger 250ml',
       date: '24/02/2020',
       iconCheck:'assets/icon/icon-tick-active.svg',
       iconGS: 'assets/icon/icon-gs1.svg',
@@ -71,7 +71,7 @@ export class HomeSlideProductComponent implements OnInit {
     },
     {
       img : 'assets/img/p3.png',
-      title: ' Sparkling wate',
+      title: 'Dầu xả gừng trắng kích mọc tóc Weilaiya Ginger 250ml',
       date: '24/02/2020',
       iconCheck:'assets/icon/icon-tick-active.svg',
       iconGS: 'assets/icon/icon-gs1.svg',

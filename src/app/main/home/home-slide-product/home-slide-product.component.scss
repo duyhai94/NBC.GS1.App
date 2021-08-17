@@ -3,7 +3,7 @@
     width: 100%;
     img {
         width: 100%;
-        height: 6.25em;
+        height: 6.8em;
         object-fit: cover;
         border-radius: 1em;
     }
@@ -21,16 +21,23 @@
             height: 1em;
             margin-right: 0.5em;
         }
+        .t-two-line {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
     }
     .item-date {
         font-style: normal;
         font-weight: 500;
         font-size: 12px;
         line-height: 15px;
-        color: #8D8D8D;
+        color: #8d8d8d;
         text-align: left;
         display: flex;
         align-items: center;
+        margin-top: 5px;
         img {
             width: 1em;
             height: 1em;
