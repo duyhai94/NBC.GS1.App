@@ -48,7 +48,16 @@
         </div>
       </div>
       <!-- verify card -->
-      <ng-template *ngIf="check==false else verify">
+        <div class="header-verify has-verify"  *ngIf="detailProduct.Status==2 else notVerify">
+          <div>
+            <img src="assets/icon/icon-has-verify.svg" alt="" />
+          </div>
+          <div class="ion-padding">
+            Đã được kiểm chứng, xác thực với GS1 Vietnam
+          </div>
+          <div></div>
+        </div>
+      <ng-template #notVerify>
         <div class="header-verify">
           <div>
             <img src="assets/icon/not-verify.svg" alt="" />
@@ -61,26 +70,15 @@
           </div>
         </div>
       </ng-template>
-      <ng-template #verify>
-        <div class="header-verify has-verify">
-          <div>
-            <img src="assets/icon/icon-has-verify.svg" alt="" />
-          </div>
-          <div class="ion-padding">
-            Đã được kiểm chứng, xác thực với GS1 Vietnam
-          </div>
-          <div>
-          </div>
-        </div>
-      </ng-template>
       <!-- tem -->
       <ion-row>
+        <ion-col size="6"></ion-col>
         <ion-col size="6" class="ci-center">
-          <img *ngIf="icheck == 'true'" [src]="detailProduct.MediaURL" alt="" />
+          <img [src]="detailProduct.MediaURL" alt="" />
         </ion-col>
-        <ion-col size="6" class="ci-center">
+        <!-- <ion-col size="6" class="ci-center">
           <img src="assets/img/product/tem.png" alt="" />
-        </ion-col>
+        </ion-col> -->
       </ion-row>
     </ion-grid>
 
@@ -116,7 +114,9 @@
           <img src="assets/icon/icon-tick-gay.svg" alt="" />
           <div class="ci-gey-3">Mô tả:</div>
         </div>
-        <div class="right ci-t-3 description">{{detailProduct.Description}}</div>
+        <div class="right ci-t-3 description">
+          {{detailProduct.Description}}
+        </div>
       </div>
       <button (click)="onRouterInfo()">Xem thêm</button>
     </div>
@@ -151,7 +151,7 @@
             <img src="assets/icon/icon-tick-green.svg" alt="" />
             <img src="assets/icon/icon-hostline.svg" alt="" />
           </div>
-          <div class="right ci-t-primary">0123456789</div>
+          <div class="right ci-t-primary"></div>
         </div>
       </div>
     </ng-container>

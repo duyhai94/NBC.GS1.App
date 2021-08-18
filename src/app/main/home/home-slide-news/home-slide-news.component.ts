@@ -11,7 +11,7 @@ export class HomeSlideNewsComponent {
   slideOpts = {
     initialSlide: 1,
     speed: 400,
-    slidesPerView: 2.1,
+    slidesPerView: 2.5,
   };
   constructor() { }
 
