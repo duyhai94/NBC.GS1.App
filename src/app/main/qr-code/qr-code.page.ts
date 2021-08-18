@@ -102,6 +102,8 @@ export class QrCodePage implements OnInit, AfterViewInit {
     const result = await BarcodeScanner.startScan(); // start scanning and wait for a result
     this.scanActive = true;
     // if the result has content
+    console.log(result, 'result');
+
     if (result.hasContent) {
       this.presentLoading();
       if (
@@ -110,10 +112,9 @@ export class QrCodePage implements OnInit, AfterViewInit {
       ) {
         const id = result.content.split('-')[1];
         this.shareService.changeProductId(id);
-        this.stopScan();
         this.router.navigate(['main/product']);
+        this.stopScan();
       } else {
-        alert('Sản phẩm này chưa được xác minh bởi GS1 Vietnam !');
         // this.http
         //   .get(
         //     'https://fgehlb1to6.execute-api.ap-southeast-1.amazonaws.com/prod/scan/product',
@@ -125,18 +126,29 @@ export class QrCodePage implements OnInit, AfterViewInit {
         //   )
         //   .subscribe(
         //     (res: any) => {
-        //       console.log(res, 'no HTTP');
+        //       console.log(res.payload, 'no HTTP');
         //       this.loading.dismiss();
-        //       if (!res.payload.ProductId) {
-        //         alert('Sản phẩm này chưa được xác minh bởi GS1 Vietnam !');
+        //       if (res.payload.ProductId) {
+        //         this.shareService.changeProductId(res.payload.ProductId);
+        //         this.router.navigate(['main/product']);
+        //         this.stopScan();
         //       } else {
-        //         this.openQrLink(
-        //           'https://mbtt-client-bddb0.web.app/' + res.payload.ProductId
-        //         );
+        //         alert('Sản phẩm này chưa được xác minh bởi GS1 Vietnam !!!');
         //       }
         //     },
         //     (err) => alert('Sản phẩm này chưa được xác minh bởi GS1 Vietnam !')
         //   );
+        switch (result.content) {
+          case '8934564600067':
+            this.shareService.changeProductId(2);
+            this.router.navigate(['main/product']);
+            break;
+
+          default:
+            alert('Sản phẩm này chưa được xác minh bởi GS1 Vietnam!');
+
+            break;
+        }
       }
     }
   };
