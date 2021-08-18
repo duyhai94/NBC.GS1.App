@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
+const data = {
+  userName : 'test@ci.com',
+  password : '123456'
+}
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',

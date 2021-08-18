@@ -5,15 +5,20 @@ ion-grid {
 .otp {
     display: flex;
     justify-content: space-between;
+    form {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
     ion-input {
         display: inline-block;
-        width: 2.8em;
-        height: 3.75em;
+        // width: 2.2em;
+        // height: 3.75em;
         margin: 0.625em;
         border: 1px solid #272727;
         border-radius: 0.5em;
         --background: none;
-        --padding-start: 0.3em;
-        font-size: 1.2em;
+        --padding-start: 13px;
+        // font-size: 1.2em;
     }
 }
