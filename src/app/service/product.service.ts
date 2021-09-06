@@ -10,25 +10,25 @@ export class ProductSerivce {
 
   detailProduct(productId): Observable<any> {
     return this.http.get(
-      `https://fgehlb1to6.execute-api.ap-southeast-1.amazonaws.com/prod/product`,
+      `http://54.169.107.162/nbc/product`,
       { params: { productId } }
     );
   }
   companyProduct(productId): Observable<any> {
     return this.http.get(
-      `https://fgehlb1to6.execute-api.ap-southeast-1.amazonaws.com/prod/product/company`,
+      `http://54.169.107.162/nbc/product/company`,
       { params: { productId } }
     );
   }
   mediaProduct(productId): Observable<any> {
     return this.http.get(
-      `https://fgehlb1to6.execute-api.ap-southeast-1.amazonaws.com/prod/product/media`,
+      `http://54.169.107.162/nbc/product/media`,
       { params: { productId } }
     );
   }
   getRelateProduct(companyId): Observable<any> {
     return this.http.get(
-      `https://fgehlb1to6.execute-api.ap-southeast-1.amazonaws.com/prod/product/company/related-product`,
+      `http://54.169.107.162/nbc/product/company/related-product`,
       {
         params: {
           companyId,
@@ -40,7 +40,7 @@ export class ProductSerivce {
   }
   getListCert(productId): Observable<any> {
     return this.http.get(
-      `https://fgehlb1to6.execute-api.ap-southeast-1.amazonaws.com/prod/product/certification/media`,
+      `http://54.169.107.162/nbc/product/certification/media`,
       { params: { productId } }
     );
   }

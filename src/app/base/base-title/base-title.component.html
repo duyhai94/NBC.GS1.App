@@ -1,11 +1,11 @@
-<div class="base-title">
+<div class="base-title" (click)="routeTO(dataTitle.right.link)">
     <div *ngIf="dataTitle.left.show == true" class="left">
         <img [src]="dataTitle.left.icon" alt="">
         <div class="ci-h-5">
             {{dataTitle.left.text}}
         </div>
     </div>
-    <div *ngIf="dataTitle.right.show == true" class="right" (click)="routeTO(dataTitle.right.link)">
+    <div *ngIf="dataTitle.right.show == true" class="right">
         <img [src]="dataTitle.right.icon" alt="">
     </div>
 </div>

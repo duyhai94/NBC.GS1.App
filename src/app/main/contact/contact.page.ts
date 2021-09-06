@@ -20,6 +20,8 @@ export class ContactPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("aaa");
+    
   }
 
 }

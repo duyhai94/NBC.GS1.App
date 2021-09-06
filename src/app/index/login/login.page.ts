@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LocalStoregeService } from 'src/app/service/localstorege.service';
+import { FormToast, invalidForm } from 'src/app/utils/pipes/valid.forms';
 
 const data = {
-  userName : 'test@ci.com',
-  password : '123456'
+  Email : 'test@ci.com',
+  Password : '123456'
+}
+const token ={
+   token: '123456'
 }
 @Component({
   selector: 'app-login',
@@ -12,15 +17,17 @@ const data = {
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  formToast = FormToast;
   showPass =  true;
   showDelete = false;
+  checkLogin : boolean;
   formLogin = new FormGroup({
-    Email: new FormControl(""),
-    Password: new FormControl(""),
-    Save: new FormControl("")
+    Email: new FormControl("",[Validators.required,invalidForm(/\S+@\S+\.\S+/, 'Email')]),
+    Password: new FormControl("",[Validators.required]),
   })
   constructor(
-    private router: Router
+    private router: Router,
+    private local: LocalStoregeService
 
   ) { }
 
@@ -37,7 +44,26 @@ export class LoginPage implements OnInit {
     this.showPass = !this.showPass;
   }
   btnLogin() {
-    this.router.navigateByUrl('main')
+    
+    if (this.formLogin.invalid ) {
+      this.formLogin.markAllAsTouched();
+      return;
+    }
+    console.log(this.formLogin.value);
+    const _e = this.formLogin.get("Email").value;
+    const _p = this.formLogin.get("Password").value;
+
+
+    if(_e == data.Email && _p == data.Password){
+      this.checkLogin = true;
+      this.formLogin.reset();
+      this.local.set('token',token);
+      this.router.navigateByUrl('main')
+      
+
+    } else {
+        this.checkLogin = false;
+    }
   }
   onDelete(){
       this.formLogin.get('Email').reset();
@@ -52,5 +78,11 @@ export class LoginPage implements OnInit {
 
     }
 
+  }
+
+     // check valid
+  isInvalidControl(controlName: string): boolean {
+  const _c = this.formLogin.get(controlName);
+  return _c.errors && !_c.errors.required && _c.errors[controlName]  && (_c.dirty || _c.touched);
   }
 }

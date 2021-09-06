@@ -62,7 +62,7 @@
 .ci-gey-4 {
     font-style: normal;
     font-weight: 500;
-    font-size: 0.87;
+    font-size: 0.87em;
     line-height: 1.3em;
     color: #8D8D8D;
 }
@@ -176,4 +176,15 @@
     font-size: 0.87em;
     line-height: 1em;
     color: #FFFFFF;
+}
+
+.error {
+    font-size: 0.75em;
+    // color: var(--ion-color-danger);
+    color: red;
+    margin: 0.5em 0em;
+}
+
+.danger {
+    color: red !important;
 }

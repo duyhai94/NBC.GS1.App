@@ -3,7 +3,13 @@
 
 /** Ionic CSS Variables **/
 
+@font-face {
+    font-family: "Montserrat";
+    src: url(../assets/font/Montserrat-Medium.ttf);
+}
+
 :root {
+    --ion-font-family: "Montserrat";
     --ion-color-primary: #002C6C;
     --ion-color-primary-rgb: 0, 44, 108;
     --ion-color-primary-contrast: #ffffff;

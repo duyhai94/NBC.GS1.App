@@ -12,7 +12,8 @@ export class HomeSlideProductComponent implements OnInit {
   slideOpts = {
     initialSlide: 1,
     speed: 400,
-    slidesPerView: 2.5,
+    slidesPerView: 3,
+    
 
   };
   constructor(
@@ -26,8 +27,8 @@ export class HomeSlideProductComponent implements OnInit {
   data = [
     {
       img : 'assets/img/p1.png',
-      title: 'Dầu xả gừng trắng kích mọc tóc Weilaiya Ginger 250ml',
-      date: '24/02/2020',
+      title: 'Sparkling water',
+      date: 'Nestle Vietnam',
       iconCheck:'assets/icon/icon-tick-active.svg',
       iconGS: 'assets/icon/icon-gs1.svg',
       tick: true,
@@ -35,8 +36,8 @@ export class HomeSlideProductComponent implements OnInit {
     },
     {
       img : 'assets/img/p2.png',
-      title: 'Dầu xả gừng trắng kích mọc tóc Weilaiya Ginger 250ml',
-      date: '24/02/2020',
+      title: 'Sparkling water',
+      date: 'Nestle Vietnam',
       iconCheck:'assets/icon/icon-tick-active.svg',
       iconGS: 'assets/icon/icon-gs1.svg',
       tick: true,
@@ -44,8 +45,8 @@ export class HomeSlideProductComponent implements OnInit {
     },
     {
       img : 'assets/img/p3.png',
-      title: 'Dầu xả gừng trắng kích mọc tóc Weilaiya Ginger 250ml',
-      date: '24/02/2020',
+      title: 'Sparkling water',
+      date: 'Nestle Vietnam',
       iconCheck:'assets/icon/icon-tick-active.svg',
       iconGS: 'assets/icon/icon-gs1.svg',
       tick: true,
@@ -53,8 +54,8 @@ export class HomeSlideProductComponent implements OnInit {
     },
     {
       img : 'assets/img/p1.png',
-      title: 'Dầu xả gừng trắng kích mọc tóc Weilaiya Ginger 250ml',
-      date: '24/02/2020',
+      title: 'Sparkling water',
+      date: 'Nestle Vietnam',
       iconCheck:'assets/icon/icon-tick-active.svg',
       iconGS: 'assets/icon/icon-gs1.svg',
       tick: true,
@@ -62,8 +63,8 @@ export class HomeSlideProductComponent implements OnInit {
     },
     {
       img : 'assets/img/p2.png',
-      title: 'Dầu xả gừng trắng kích mọc tóc Weilaiya Ginger 250ml',
-      date: '24/02/2020',
+      title: 'Sparkling water',
+      date: 'Nestle Vietnam',
       iconCheck:'assets/icon/icon-tick-active.svg',
       iconGS: 'assets/icon/icon-gs1.svg',
       tick: true,
@@ -71,8 +72,8 @@ export class HomeSlideProductComponent implements OnInit {
     },
     {
       img : 'assets/img/p3.png',
-      title: 'Dầu xả gừng trắng kích mọc tóc Weilaiya Ginger 250ml',
-      date: '24/02/2020',
+      title: 'Sparkling water',
+      date: 'Nestle Vietnam',
       iconCheck:'assets/icon/icon-tick-active.svg',
       iconGS: 'assets/icon/icon-gs1.svg',
       tick: true,

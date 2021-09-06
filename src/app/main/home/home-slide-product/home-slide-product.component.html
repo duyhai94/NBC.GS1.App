@@ -8,7 +8,9 @@
                 <img *ngIf="i.verify == true" src="assets/icon/icon-gs1.svg" alt="">
                 <!-- <img  [src]="i.iconGS" alt=""> -->
                 <div class="t-two-line">
-                    {{i.title}}
+                    {{i.title | slice:0:10}}
+                    <span *ngIf="i.title.length > 10">...</span>
+
                 </div>
             </div>
             <!-- check -->
@@ -26,18 +28,23 @@
 <ion-slides [options]="slideOpts">
     <ion-slide *ngFor="let i of data" (click)="onRouterTo(i.verify)">
         <div class="item">
+            <!-- img product -->
             <img [src]="i.img " alt=" ">
             <div class="item-title">
                 <!-- verify -->
                 <img *ngIf="i.verify == true" src="assets/icon/icon-gs1.svg" alt="">
                 <!-- <img  [src]="i.iconGS" alt=""> -->
                 <div class="t-two-line">
-                    {{i.title}}
+                    {{i.title | slice:0:10}}
+                    <span *ngIf="i.title.length > 10">...</span>
+
                 </div>
             </div>
+            <!-- check -->
             <div class="item-date">
                 <img *ngIf="i.tick == true" src="assets/icon/icon-tick-active.svg" alt="">
-                <img *ngIf="i.tick == false" src="assets/icon/icon-tick.svg" alt="">
+                <img *ngIf="!i.tick" src="assets/icon/icon-tick.svg" alt="">
+
                 <div>
                     {{i.date}}
                 </div>

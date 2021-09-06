@@ -22,6 +22,9 @@
                             <img src="assets/icon/icon-close.svg" alt="">
                         </div>
                     </div>
+                    <span *ngIf="isInvalidControl('Email')" class="error">{{formToast.errValidEmail}}</span>
+                    <span *ngIf="formLogin.get('Email').errors?.required && formLogin.get('Email').touched" class="error">{{formToast.emptyEmail}}</span>
+                    <br>
                     <div class="form-group">
                         <label for="" class="ci-gey-3">Mật khẩu</label>
                         <input [type]="showPass ? 'password':'text'" class="form-group-input" name="password" formControlName="Password">
@@ -30,6 +33,10 @@
                             <img *ngIf="showPass" src="assets/icon/icon-show-eye.svg" alt="">
                         </div>
                     </div>
+                    <span *ngIf="formLogin.get('Password').errors?.required && formLogin.get('Password').touched" class="error">{{formToast.emptyPassword}}</span>
+                    <span *ngIf="checkLogin == false" class="error">{{formToast.errLogin}}</span>
+
+                    <br>
                     <div class="form-tool">
                         <div class="ci-t-3 ci-center-item check-box">
                             <input type="checkbox" id="save" name="save" value="Bike">

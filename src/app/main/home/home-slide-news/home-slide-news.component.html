@@ -1,10 +1,10 @@
 <ion-slides [options]="slideOpts">
     <ion-slide *ngFor="let i of data">
-        <div class="item">
+        <div class="item" (click)="onRouterNews(i.id)">
             <img [src]="i.img " alt=" ">
             <div class="item-title">
-                {{i.title | slice:0:39}}
-                <span *ngIf="i.title.length > 39">...</span>
+                {{i.title | slice:0:15}}
+                <span *ngIf="i.title.length > 15">...</span>
             </div>
             <div class="item-date">
                 {{i.date}}

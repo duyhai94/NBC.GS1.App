@@ -3,6 +3,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ModaSuccessComponent } from 'src/app/base/moda-success/moda-success.component';
+import { DataForgotService } from 'src/app/service/data/data-forgot.service';
+import { DataRegisterService } from 'src/app/service/data/data-register.service';
 import { ModalService } from 'src/app/service/modal.service';
 
 @Component({
@@ -11,6 +13,8 @@ import { ModalService } from 'src/app/service/modal.service';
   styleUrls: ['./otp.page.scss'],
 })
 export class OtpPage implements OnInit {
+  dataForgot;
+  dataRegister;
   checkRouter;
   back;
   OTP: string = '';
@@ -26,22 +30,32 @@ export class OtpPage implements OnInit {
   constructor(
     private activeRouter: ActivatedRoute,
     private modalController: ModalController,
-    private router: Router
+    private router: Router,
+    private dataForgotService: DataForgotService,
+    private dataRegisterService: DataRegisterService,
   ) { }
 
   ngOnInit() {
-   this.checkRouter = this.activeRouter.snapshot.params.id;
+    this.dataForgotService.currentData.subscribe(data => this.dataForgot = data);
+    this.dataRegisterService.currentData.subscribe(data =>this.dataRegister = data);
+    console.log('Phone;',this.dataRegister.Phone);
+    
+   this.checkRouter = this.activeRouter.snapshot.params.id;   
    if(this.checkRouter == 1){
      this.back ='index/register';
+     if(this.dataRegister.Phone == undefined){
+        this.router.navigateByUrl('index/login');
+     }
    } else if( this.checkRouter == 2){
     this.back ='index/forgot';
-
+      if(this.dataForgot.Phone == undefined){
+          this.router.navigateByUrl('index/login');
+      }
    }
     
     
   }
   btnConfirm(){ 
-
     const o1 = this.formOTP.get('otp1').value;
     const o2 = this.formOTP.get('otp2').value;    
     const o3 = this.formOTP.get('otp3').value;    
@@ -49,8 +63,9 @@ export class OtpPage implements OnInit {
     const o5 = this.formOTP.get('otp5').value;    
     const o6 = this.formOTP.get('otp6').value;    
     const otp = o1+o2+o3+o4+o5+o6;
-    console.log(otp);
-    
+    if(otp.length != 6) {
+      return;
+    }
        
     if(this.checkRouter == 1){
       this.modaSuccess();
@@ -77,9 +92,14 @@ export class OtpPage implements OnInit {
     return await modal.present();
   } 
 
-  reSendOTP(){}
-
-
+  reSendOTP(){
+    if(this.checkRouter == 1) {
+        console.log(this.dataRegister.Phone);
+    } else if ( this.checkRouter == 2) {
+        console.log(this.dataForgot.Phone);
+        
+    }
+  }
   otpController(event,next,prev){
     if(event.target.value.length < 1 && prev){
       prev.setFocus()

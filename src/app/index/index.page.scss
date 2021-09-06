@@ -3,23 +3,22 @@
     flex-direction: column;
     position: relative;
     width: 100%;
+    // margin-bottom: 1.18em;
     label {
         padding-bottom: 0.25em;
     }
-    input {
-        margin-bottom: 1.18em;
-    }
+    input {}
     .form-group-input {
         background: #F2F2F3;
         border-radius: 0.5em;
-        height: 3em;
+        min-height: 3em;
         border: none;
         padding: 0em 1em 0em 1em;
     }
     .toggle-btn {
         position: absolute;
         right: 1em;
-        bottom: 1.5em;
+        bottom: 0.5em;
     }
 }
 

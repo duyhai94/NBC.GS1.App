@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CanActiveRouter } from '../utils/guard/can-active-router.service';
 
 import { MainPage } from './main.page';
 
@@ -24,10 +25,27 @@ const routes: Routes = [
         path: 'contact',
         loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
       },
+      
       {
         path: 'qr-code',
         loadChildren: () => import('./qr-code/qr-code.module').then( m => m.QrCodePageModule)
       },
+      {
+        path: 'favourite',
+        loadChildren: () => import('./favourite/favourite.module').then( m => m.FavouritePageModule),
+        canActivate :[CanActiveRouter]
+
+      },
+      {
+        path: 'profile',
+        loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule),
+        canActivate :[CanActiveRouter]
+      },
+      {
+        path: 'product',
+        loadChildren: () => import('./product/product.module').then( m => m.ProductPageModule)
+      },
+    
     
       {
         path: '',
@@ -35,18 +53,6 @@ const routes: Routes = [
         pathMatch: 'full'
       }
     ]
-  },
-  {
-    path: 'favourite',
-    loadChildren: () => import('./favourite/favourite.module').then( m => m.FavouritePageModule)
-  },
-  {
-    path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
-  },
-  {
-    path: 'product',
-    loadChildren: () => import('./product/product.module').then( m => m.ProductPageModule)
   },
 
  

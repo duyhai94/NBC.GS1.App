@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { BaseAlertComponent } from 'src/app/base/base-alert/base-alert.component';
+import { LocalStoregeService } from 'src/app/service/localstorege.service';
 import { ModalService } from 'src/app/service/modal.service';
 
 @Component({
@@ -8,24 +9,39 @@ import { ModalService } from 'src/app/service/modal.service';
   templateUrl: './historys.page.html',
   styleUrls: ['./historys.page.scss'],
 })
-export class HistorysPage implements OnInit {
+export class HistorysPage implements OnInit  {
   dataHeaderNav = {
     logo : {
       icon : null,
-      text : 'Liên hệ'
+      text : 'Lịch sử'
     },
     list: {
       profile : true,
       favourite : true
     }
   }
+  check;
+  showHistory = false;
   constructor(
     private alert: AlertController,
-    private modalService: ModalService
+    private modalService: ModalService,
+    private local : LocalStoregeService
   ) { }
 
   ngOnInit() {
+ 
+    const data = this.local.get('token');
+    if(data == null){
+      this.showHistory = false;
+    } else {
+      this.showHistory = true;
+    }
+
+    
+
   }
+
+
 
 
   openModalLove(id){

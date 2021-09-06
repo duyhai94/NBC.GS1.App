@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { LocalStoregeService } from 'src/app/service/localstorege.service';
 
 @Component({
   selector: 'app-profile',
@@ -12,15 +13,12 @@ export class ProfilePage implements OnInit {
   constructor(
     private router : Router,
     private alert : AlertController,
-    private activeRouter: ActivatedRoute
- 
+    private activeRouter: ActivatedRoute,
+    private local: LocalStoregeService
   ) { }
 
   ngOnInit() {
-      
      this.back = this.activeRouter.snapshot.params.back;
-
-      
   }
 
   dataTitle = {
@@ -57,13 +55,14 @@ export class ProfilePage implements OnInit {
       right: {
         show : false,
         icon: 'assets/icon/icon-logout.svg',
-      
+        link: '/main/profile'
+
       }
     }
     
   }
 
-    onLogout(){
+  onLogout(){
       this.alertLogout()
     }
 
@@ -79,12 +78,13 @@ export class ProfilePage implements OnInit {
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
-            console.log('Confirm Cancel: blah');
           }
         }, {
           text: 'Đăng xuất',
           handler: () => {
-            this.router.navigateByUrl('index/login');
+            this.local.del()
+            this.router.navigateByUrl('main');
+
           }
         }
       ]

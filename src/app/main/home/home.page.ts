@@ -46,9 +46,9 @@ export class HomePage implements OnInit {
         text : 'Tin tức'
       },
       right: {
-        show : true,
-        icon: 'assets/icon/icon-next.svg',
-        link: '/main/news'
+        show : false,
+        // icon: 'assets/icon/icon-next.svg',
+        // link: '/main/news'
       }
     }
   }

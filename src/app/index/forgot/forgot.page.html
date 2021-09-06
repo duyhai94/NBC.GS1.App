@@ -13,16 +13,16 @@
             <ion-col size="12" class="ci-t-normal">
                 Vui lòng nhập Số điện thoại bạn đã sử dụng để đăng ký tài khoản.
             </ion-col>
-
-
             <ion-col size="12">
-                <form [formGroup]="formForgot" (ngSubmit)="btnForgot()">
+                <form [formGroup]="formForgot">
                     <div class="form-group">
                         <label for="" class="ci-gey-3 ">Số điện thoại </label>
-                        <input type="tel" class="form-group-input" name="phone" formControlName="Phone">
-
+                        <input type="tel" class="form-group-input ion-text-center" name="Phone" maxlength="10" formControlName="Phone">
                     </div>
-                    <button type="submit" class="btn-primary-16">
+                    <span *ngIf="formForgot.get('Phone').errors?.required && formForgot.get('Phone').touched" class="error">{{formToast.emptyPhone}}</span>
+                    <span *ngIf="isInvalidControl('Phone')" class="error">{{formToast.errValidPhone}}</span>
+                    <span *ngIf="checkForgot == false" class="error">{{formToast.errForgot}}</span>
+                    <button (click)="btnForgot()" class="btn-primary-16">
                       Tiếp theo
                   </button>
                 </form>

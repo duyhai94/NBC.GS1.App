@@ -8,14 +8,14 @@ const routes: Routes = [
     loadChildren: () => import('./index/index.module').then( m => m.IndexPageModule)
   },
   {
-    path: '',
-    redirectTo:'index',
-    pathMatch: 'full'
-
-  },
-  {
     path: 'main',
     loadChildren: () => import('./main/main.module').then( m => m.MainPageModule)
+  },
+  {
+    path: '',
+    redirectTo:'main',
+    pathMatch: 'full'
+
   }
 
 ];

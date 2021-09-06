@@ -11,11 +11,15 @@
         </ion-row>
         <ion-row>
             <ion-col size="12">
-                <form [formGroup]="formRegister" (ngSubmit)="btnRegister()">
+                <form [formGroup]="formRegister">
                     <div class="form-group">
                         <label for="" class="ci-gey-3 ">Số điện thoại</label>
-                        <input class="form-group-input" type="tel" formControlName="Phone" name="phone">
+                        <input class="form-group-input" type="tel" formControlName="Phone" maxlength="10" name="phone">
                     </div>
+                    <span *ngIf="isInvalidControl('Phone')" class="error">{{formToast.errValidPhone}}</span>
+                    <span *ngIf="formRegister.get('Password').errors?.required && formRegister.get('Password').touched" class="error">{{formToast.emptyPhone}}</span>
+
+                    <br>
                     <div class="form-group">
                         <label for="" class="ci-gey-3 ">Mật khẩu</label>
                         <input class="form-group-input" [type]="showPass1 ?  'password':'text' " formControlName="Password" name="password">
@@ -24,6 +28,11 @@
                             <img *ngIf="showPass1" src="assets/icon/icon-show-eye.svg" alt="">
                         </div>
                     </div>
+                    <span *ngIf="isInvalidControl('Password')" class="error">{{formToast.errValidPasswod}}</span>
+                    <span *ngIf="formRegister.get('Password').errors?.required && formRegister.get('Password').touched" class="error">{{formToast.emptyPassword}}</span>
+
+                    <br>
+
                     <div class="form-group">
                         <label for="" class="ci-gey-3 ">Xác nhận lại mật khẩu</label>
                         <input class="form-group-input" [type]="showPass2 ?  'password':'text' " formControlName="Confirm" name="confirm">
@@ -32,6 +41,10 @@
                             <img *ngIf="showPass2" src="assets/icon/icon-show-eye.svg" alt="">
                         </div>
                     </div>
+                    <span *ngIf="checkTruePW == false" class="error">{{formToast.errValidTruePassword}}</span>
+
+                    <br>
+
                     <button class="btn-primary-16" (click)="btnRegister()">
                         Tiếp theo
                     </button>

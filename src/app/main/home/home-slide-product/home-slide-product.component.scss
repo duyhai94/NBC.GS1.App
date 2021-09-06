@@ -10,7 +10,7 @@
     .item-title {
         font-style: normal;
         font-weight: 600;
-        font-size: 14px;
+        font-size: 12px;
         line-height: 21px;
         color: #272727;
         text-align: left;
@@ -23,15 +23,17 @@
         }
         .t-two-line {
             overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            display: inline-block;
+            // display: -webkit-box;
+            // -webkit-line-clamp: 2;
+            // -webkit-box-orient: vertical;
         }
     }
     .item-date {
         font-style: normal;
         font-weight: 500;
-        font-size: 12px;
+        font-size: 10px;
         line-height: 15px;
         color: #8d8d8d;
         text-align: left;
